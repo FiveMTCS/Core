@@ -1,0 +1,43 @@
+{
+	"common": {
+		"or": "Or"
+	},
+	"characters": {
+		"warning": "This is the basics of your character. You won't be able to change those once you finish your character creation.",
+		"selection": {
+			"title": "Welcome to Survival V",
+			"select": "Select",
+			"description": "Please select the character you want to play.",
+			"create": "Create a new character",
+			"none": "You don't have any character",
+			"yearsOld": "years old"
+		},
+		"creation": {
+			"informations": {
+				"title": "Informations",
+				"lastname": "Last name",
+				"lastnamePlaceholder": "Last name",
+				"lastnameError": "The last name must be at least 3 characters.",
+				"firstname": "First name",
+				"firstnamePlaceholder": "First name",
+				"firstnameError": "The first name must be at least 3 characters.",
+				"age": "Age",
+				"agePlaceholder": "Between 15 and 90 years old",
+				"ageError": "Age must be between 15 and 90 years old."
+			},
+			"faces": {
+				"title": "Faces",
+				"seeFaces": "See the faces",
+				"father": "Father",
+				"mother": "Mother",
+				"appearance": "Do you look more like your father or your mother ?",
+				"clickToSelect": "Click on a face to select it."
+			},
+			"skin": {
+				"title": "Skin",
+				"accordion": "Skin color",
+				"description": "Select a skin color :"
+			}
+		}
+	}
+}

@@ -1,0 +1,664 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>TCS</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/laravel.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">TCS</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content class">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Classes</li>
+  <li>TcsCallbackManager</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/src/core/librairies/callbacks/mixed_callbackManager.ts</code>
+        </p>
+
+
+
+
+            <p class="comment">
+                <h3>Example</h3>
+            </p>
+            <div class="io-description">
+            </div>
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#ClientCallBack">ClientCallBack</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#eventListenerClient">eventListenerClient</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#eventListenerServer">eventListenerServer</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#eventManager">eventManager</a>
+                            </li>
+                            <li>
+                                <a href="#RegisterServerCallback">RegisterServerCallback</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#requestId">requestId</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#ServerCallBack">ServerCallBack</a>
+                            </li>
+                            <li>
+                                <a href="#TriggerServerCallback">TriggerServerCallback</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(eventManager: <a href="../interfaces/TcsEvent.html">TcsEventManager</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/src/core/librairies/callbacks/mixed_callbackManager.ts:13</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Initialize the callbacks manager</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>eventManager</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../interfaces/TcsEvent.html" target="_self" >TcsEventManager</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ClientCallBack"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            ClientCallBack</b>
+                            <a href="#ClientCallBack"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>any[]</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/src/core/librairies/callbacks/mixed_callbackManager.ts:8</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="eventListenerClient"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            eventListenerClient</b>
+                            <a href="#eventListenerClient"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/TcsEvent.html" target="_self" >TcsEventListener</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/src/core/librairies/callbacks/mixed_callbackManager.ts:12</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="eventListenerServer"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            eventListenerServer</b>
+                            <a href="#eventListenerServer"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/TcsEvent.html" target="_self" >TcsEventListener</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/src/core/librairies/callbacks/mixed_callbackManager.ts:13</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="eventManager"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            eventManager</b>
+                            <a href="#eventManager"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/TcsEvent.html" target="_self" >TcsEventManager</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/src/core/librairies/callbacks/mixed_callbackManager.ts:11</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="RegisterServerCallback"></a>
+                        <span class="name">
+                            <b>
+                            RegisterServerCallback</b>
+                            <a href="#RegisterServerCallback"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="101" class="link-to-prism">src/src/core/librairies/callbacks/mixed_callbackManager.ts:101</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Server side function</p>
+</div>
+                    </td>
+                </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                          <div class="io-description">
+                                  <b>Parameters :</b>
+                                  <table class="params">
+                                      <thead>
+                                          <tr>
+                                                <td>Name</td>
+                                                    <td>Description</td>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                                <tr>
+                                                        <td>eventName</td>
+                                                        <td>
+                                                                <code><p>The name of the event to call on the client side</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>cb</td>
+                                                        <td>
+                                                                <code><p>return function</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                      </tbody>
+                                  </table>
+                          </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="requestId"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            requestId</b>
+                            <a href="#requestId"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>0</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/src/core/librairies/callbacks/mixed_callbackManager.ts:10</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ServerCallBack"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            ServerCallBack</b>
+                            <a href="#ServerCallBack"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>any[]</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/src/core/librairies/callbacks/mixed_callbackManager.ts:9</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="TriggerServerCallback"></a>
+                        <span class="name">
+                            <b>
+                            TriggerServerCallback</b>
+                            <a href="#TriggerServerCallback"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">src/src/core/librairies/callbacks/mixed_callbackManager.ts:80</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Client side function</p>
+</div>
+                    </td>
+                </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                          <div class="io-description">
+                                  <b>Parameters :</b>
+                                  <table class="params">
+                                      <thead>
+                                          <tr>
+                                                <td>Name</td>
+                                                    <td>Description</td>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                                <tr>
+                                                        <td>eventName</td>
+                                                        <td>
+                                                                <code><p>The name of the event to call on the server side</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>cb</td>
+                                                        <td>
+                                                                <code><p>return function</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>args</td>
+                                                        <td>
+                                                                <code><p>arguments to be transmitted on the server side</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                      </tbody>
+                                  </table>
+                          </div>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">class TcsCallbackManager {
+	private ClientCallBack: any[];
+	private ServerCallBack: any[];
+	private requestId &#x3D; 0;
+	private eventManager: TcsEventManager;
+	private eventListenerClient: TcsEventListener;
+	private eventListenerServer: TcsEventListener;
+
+	/**
+	 * Initialize the callbacks manager
+	 */
+	constructor(eventManager: TcsEventManager) {
+		this.ClientCallBack &#x3D; [];
+		this.ServerCallBack &#x3D; [];
+		this.eventManager &#x3D; eventManager;
+
+		/**
+		 * Client side event
+		 */
+		this.eventListenerClient &#x3D; new TcsEventListener(
+			TcsEventsList.LISTENER_CALLBACK_CLIENT,
+			({ requestId, args }: { requestId: number; args: any }) &#x3D;&gt; {
+				this.ClientCallBack[requestId](args);
+				this.ClientCallBack[requestId] &#x3D; null;
+			}
+		);
+		this.eventManager.addEventHandler(this.eventListenerClient);
+		/**
+		 * Server side event
+		 */
+		this.eventListenerServer &#x3D; new TcsEventListener(
+			TcsEventsList.LISTENER_CALLBACK_SERVER,
+			(
+				{
+					eventName,
+					requestId,
+					args,
+				}: {
+					eventName: string;
+					requestId: number;
+					args: any;
+				},
+				source?: string
+			) &#x3D;&gt; {
+				//@ts-ignore
+				if (this.ServerCallBack[eventName] !&#x3D; null) {
+					//@ts-ignore
+					const result &#x3D; this.ServerCallBack[eventName](source, args);
+					const triggerEvent: TcsClientEvent &#x3D; {
+						eventType: TcsEventsList.LISTENER_CALLBACK_CLIENT,
+						target: TcsEventTarget.CLIENT,
+						//@ts-ignore
+						targetId: source,
+						data: {
+							requestId: requestId,
+							args: result,
+						},
+					};
+					this.eventManager.sendEvent(triggerEvent);
+				} else {
+					TCS.error(&#x60;[CALLBACKS]: ${eventName} DO NOT EXIST&#x60;);
+				}
+			}
+		);
+		this.eventManager.addEventHandler(this.eventListenerServer);
+	}
+
+	/**
+	 * Client side function
+	 * @param eventName The name of the event to call on the server side
+	 * @param cb return function
+	 * @param args arguments to be transmitted on the server side
+	 */
+	TriggerServerCallback &#x3D; (eventName: string, cb: Function, args: any) &#x3D;&gt; {
+		this.ClientCallBack[this.requestId] &#x3D; cb;
+
+		const triggerEvent: TcsEvent &#x3D; {
+			eventType: TcsEventsList.LISTENER_CALLBACK_SERVER,
+			target: TcsEventTarget.SERVER,
+			data: {
+				eventName: eventName,
+				requestId: this.requestId,
+				args: args,
+			},
+		};
+		this.eventManager.sendEvent(triggerEvent);
+		this.requestId++;
+	};
+
+	/**
+	 * Server side function
+	 * @param eventName The name of the event to call on the client side
+	 * @param cb return function
+	 */
+	RegisterServerCallback &#x3D; (eventName: string, cb: Function) &#x3D;&gt; {
+		//@ts-ignore
+		this.ServerCallBack[eventName] &#x3D; cb;
+	};
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'TcsCallbackManager.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

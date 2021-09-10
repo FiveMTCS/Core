@@ -1,0 +1,25 @@
+{
+	"name": "core",
+	"version": "1.1.0",
+	"description": "TCS Core",
+	"main": "index.js",
+	"scripts": {},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/FiveMTCS/Core.git"
+	},
+	"keywords": [
+		"FiveM",
+		"tcs"
+	],
+	"author": "Maxence Leguede",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/FiveMTCS/Core/issues"
+	},
+	"homepage": "https://github.com/FiveMTCS/Core#readme",
+	"dependencies": {
+		"mongodb": "^3.6.6",
+		"mysql2": "^2.2.5"
+	}
+}

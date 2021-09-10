@@ -1,0 +1,127 @@
+{
+	"common": {
+		"or": "Ou",
+		"opacity": "Opacité",
+		"none": "Aucun",
+		"alot": "Beaucoup",
+		"little": "Peu",
+		"low": "Bas",
+		"high": "Haut",
+		"thin": "Fin",
+		"big": "Gros",
+		"short": "Court",
+		"long": "Long"
+	},
+	"characters": {
+		"warning": "C’est la base de votre personnage. Vous ne pourrez plus changer ces informations une fois la création de personnage passée.",
+		"selection": {
+			"title": "Bienvenue sur Survival V",
+			"select": "Sélectionner",
+			"description": "Veuillez sélectionnez le personnage que vous voulez jouer.",
+			"create": "Créer un nouveau personnage",
+			"none": "Vous n'avez aucun personnage",
+			"yearsOld": "ans"
+		},
+		"creation": {
+			"informations": {
+				"title": "Informations",
+				"lastname": "Nom",
+				"lastnamePlaceholder": "Nom de famille",
+				"lastnameError": "Le nom de famille doit contenir au moins 3 caractères.",
+				"firstname": "Prénom",
+				"firstnamePlaceholder": "Prénom",
+				"firstnameError": "Le prénom doit contenir au moins 3 caractères.",
+				"age": "Âge",
+				"agePlaceholder": "Entre 15 et 90 ans",
+				"ageError": "L'âge doit être compris entre 15 et 90 ans."
+			},
+			"faces": {
+				"title": "Visages",
+				"seeFaces": "Voir les visages",
+				"father": "Père",
+				"mother": "Mère",
+				"appearance": "Vous ressemblez plus à votre père ou votre mère ?",
+				"clickToSelect": "Cliquez sur un visage pour le sélectionner."
+			},
+			"hairs": {
+				"title": "Cheveux",
+				"seeHairs": "Voir les cheveux",
+				"primaryColor": "Couleur primaire",
+				"secondaryColor": "Couleur secondaire",
+				"selectPrimaryColor": "Sélectionner votre couleur primaire de cheveux :",
+				"selectSecondaryColor": "Sélectionner votre couleur primaire de cheveux :",
+				"clickToSelect": "Cliquez sur une coupe de cheveux pour la sélectionner."
+			},
+			"skin": {
+				"title": "Peau",
+				"accordion": "Couleur de peau",
+				"description": "Sélectionner une couleur de peau :"
+			},
+			"eyes": {
+				"title": "Yeux",
+				"opening": "Ouverture des yeux :",
+				"color": "Sélectionner une couleur des yeux :",
+				"closed": "Fermés",
+				"opened": "Ouverts"
+			},
+			"eyebrows": {
+				"title": "Sourcils",
+				"eyebrows": "Sourcils",
+				"clickToSelectEyebrows": "Cliquez sur un sourcil pour le sélectionner.",
+				"eyebrowsColor": "Couleur des sourcils",
+				"eyebrowsColorSelect": "Sélectionner la couleur des sourcils :",
+				"eyebrowsQuantity": "Quantité de sourcils :",
+				"eyebrownForward": "Avancement des sourcils :",
+				"eyebrownHigh": "Hauteur des sourcils :"
+			},
+			"beards": {
+				"title": "Barbes",
+				"beard": "Barbes",
+				"clickToSelectBeard": "Cliquez sur une barbe pour la sélectionner.",
+				"beardColor": "Couleur de la barbe",
+				"beardColorSelect": "Sélectionner une couleur de barbe :",
+				"beardQuantity": "Quantité de poils :"
+			},
+			"nose": {
+				"title": "Nez",
+				"width": "Grosseur du nez :",
+				"peakHight": "Longueur du nez",
+				"peakLenght": "Avancée de la pointe :",
+				"peakLowering": "Abaissement de la pointe :",
+				"boneHigh": "Hauteur de l'os :",
+				"boneTwist": "Courbure de l'os :",
+				"right": "Droite",
+				"left": "Gauche"
+			},
+			"cheeks": {
+				"title": "Joues",
+				"width": "Grosseur de la joue :",
+				"boneHigh": "Hauteur de l'os :",
+				"boneWidth": "Grosseur de l'os :"
+			},
+			"lips": {
+				"title": "Lèvres",
+				"width": "Grosseur des lèvres :"
+			},
+			"neck": {
+				"title": "Nuque",
+				"thikness": "Largeur de la nuque :"
+			},
+			"clothes": {
+				"title": "Vêtements",
+				"tops": "Hauts",
+				"topsClickToSelect": "Cliquez sur un haut pour le sélectionner.",
+				"bottoms": "Bas",
+				"bottomsClickToSelect": "Cliquez sur un bas pour le sélectionner."
+			},
+			"imperfections": {
+				"title": "Imperfections",
+				"blemishes": "Tâches",
+				"ageing": "Vieillesse",
+				"complexion": "Rousseur",
+				"sunDamage": "Peau abimée",
+				"freckles": "Tâches de rousseur"
+			}
+		}
+	}
+}

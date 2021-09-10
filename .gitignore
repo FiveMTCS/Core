@@ -1,0 +1,12 @@
+node_modules/
+.tscache/
+copyToSources.bat
+package-lock.json
+**/*.d.ts
+**/*/srv_databaseConfig.ts
+build/
+**/*/*.tmp.txt
+**/*/yarn.lock
+**/*/package-lock.json
+yarn.lock
+.yarn.installed

@@ -1,0 +1,135 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>TCS</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	      <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/laravel.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="./" class="navbar-brand">TCS</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<h1 id="contribution">Contribution</h1>
+<p>Here are the contribution guidelines. Please, read it before contributing.</p>
+<h2 id="documentation">Documentation</h2>
+<ul>
+<li>Pull requests for docs update, if needed</li>
+<li>Code-level documentation expectations<ul>
+<li>100% documentation coverage for pull requests</li>
+<li>Update readme if needed</li>
+<li>Update doc if needed</li>
+</ul>
+</li>
+</ul>
+<h2 id="environment-setup">Environment setup</h2>
+<p>TCS is using <a href="https://prettier.io/">Prettier</a> to format the code. You must use our format style in your push requests.</p>
+<h2 id="compiling">Compiling</h2>
+<p>You must compile your TS file with these actions before sending a pull request. The build will appear in the build folder.</p>
+<div><pre class="line-numbers"><code class="language-none">npm run precompile</code></pre></div><h2 id="render-the-documentation">Render the documentation</h2>
+<p>TCS uses <a href="https://compodoc.app/">compodoc</a> to render the documentation automatically. If you need to update the documentation due to code changes, please follow these steps :</p>
+<div><pre class="line-numbers"><code class="language-none">npm install -g &#64;compodoc/compodoc
+
+npm run doc</code></pre></div><h3 id="dependencies">Dependencies</h3>
+<p>The current project depends on :</p>
+<ul>
+<li>@citizenfx/client</li>
+<li>@citizenfx/server</li>
+<li>@types/node</li>
+<li>prettier</li>
+<li>tslint</li>
+<li>typescript</li>
+<li>fs-extra</li>
+<li>merge-files</li>
+</ul>
+<p>Execute the following command to install them :</p>
+<div><pre class="line-numbers"><code class="language-none">npm i</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'contributing.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="./js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="./js/menu-wc.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

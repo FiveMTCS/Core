@@ -1,0 +1,1685 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>TCS</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/laravel.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">TCS</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content class">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Classes</li>
+  <li>TcsPlayer</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/src/modules/core/player/server/classes/srv_player.ts</code>
+        </p>
+
+
+
+
+            <p class="comment">
+                <h3>Example</h3>
+            </p>
+            <div class="io-description">
+            </div>
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#characters">characters</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#group">group</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#licenses">licenses</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#playerId">playerId</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#punishments">punishments</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#ready">ready</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#sessionStart">sessionStart</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#source">source</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#wholeSession">wholeSession</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#addPunishment">addPunishment</a>
+                            </li>
+                            <li>
+                                <a href="#disconnect">disconnect</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#fetchCharacters">fetchCharacters</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#fetchPunishments">fetchPunishments</a>
+                            </li>
+                            <li>
+                                <a href="#getAllSessionsTime">getAllSessionsTime</a>
+                            </li>
+                            <li>
+                                <a href="#getGroup">getGroup</a>
+                            </li>
+                            <li>
+                                <a href="#getId">getId</a>
+                            </li>
+                            <li>
+                                <a href="#getPunishments">getPunishments</a>
+                            </li>
+                            <li>
+                                <a href="#getSessionTime">getSessionTime</a>
+                            </li>
+                            <li>
+                                <a href="#getSource">getSource</a>
+                            </li>
+                            <li>
+                                <a href="#hasPermission">hasPermission</a>
+                            </li>
+                            <li>
+                                <a href="#isReady">isReady</a>
+                            </li>
+                            <li>
+                                <a href="#msToTime">msToTime</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#retrievingInformations">retrievingInformations</a>
+                            </li>
+                            <li>
+                                <a href="#setGroup">setGroup</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(source: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/src/modules/core/player/server/classes/srv_player.ts:19</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>source</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="characters"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            characters</b>
+                            <a href="#characters"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../classes/TcsCharacter.html" target="_self" >TcsCharacter[]</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/src/modules/core/player/server/classes/srv_player.ts:15</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="group"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            group</b>
+                            <a href="#group"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../miscellaneous/enumerations.html#TcsGroups" target="_self" >TcsGroups</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/src/modules/core/player/server/classes/srv_player.ts:17</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="licenses"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            licenses</b>
+                            <a href="#licenses"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/Licenses.html" target="_self" >Licenses</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/src/modules/core/player/server/classes/srv_player.ts:10</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="playerId"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            playerId</b>
+                            <a href="#playerId"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/src/modules/core/player/server/classes/srv_player.ts:9</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="punishments"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            punishments</b>
+                            <a href="#punishments"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/TcsPunishmentsList.html" target="_self" >TcsPunishmentsList</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/src/modules/core/player/server/classes/srv_player.ts:11</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ready"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            ready</b>
+                            <a href="#ready"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/src/modules/core/player/server/classes/srv_player.ts:19</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="sessionStart"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            sessionStart</b>
+                            <a href="#sessionStart"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/src/modules/core/player/server/classes/srv_player.ts:13</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="source"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            source</b>
+                            <a href="#source"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/src/modules/core/player/server/classes/srv_player.ts:8</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="wholeSession"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            wholeSession</b>
+                            <a href="#wholeSession"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/src/modules/core/player/server/classes/srv_player.ts:12</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="addPunishment"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Async</span>
+                            addPunishment
+                        </b>
+                        <a href="#addPunishment"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>addPunishment(punishment: <a href="../interfaces/TcsPunishment.html">TcsPunishment</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="176"
+                            class="link-to-prism">src/src/modules/core/player/server/classes/srv_player.ts:176</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Add the specified punishment to the player&#39;s history</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>punishment</td>
+                                    <td>
+                                                <code><a href="../interfaces/TcsPunishment.html" target="_self" >TcsPunishment</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>New punishment to add to the player&#39;s history</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="disconnect"></a>
+                    <span class="name">
+                        <b>
+                            disconnect
+                        </b>
+                        <a href="#disconnect"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>disconnect()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="285"
+                            class="link-to-prism">src/src/modules/core/player/server/classes/srv_player.ts:285</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Save current player session</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchCharacters"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Async</span>
+                            fetchCharacters
+                        </b>
+                        <a href="#fetchCharacters"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>fetchCharacters()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="75"
+                            class="link-to-prism">src/src/modules/core/player/server/classes/srv_player.ts:75</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchPunishments"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            <span class="modifier">Async</span>
+                            fetchPunishments
+                        </b>
+                        <a href="#fetchPunishments"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>fetchPunishments()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="51"
+                            class="link-to-prism">src/src/modules/core/player/server/classes/srv_player.ts:51</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAllSessionsTime"></a>
+                    <span class="name">
+                        <b>
+                            getAllSessionsTime
+                        </b>
+                        <a href="#getAllSessionsTime"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getAllSessionsTime()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="249"
+                            class="link-to-prism">src/src/modules/core/player/server/classes/srv_player.ts:249</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Get the all sessions time</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/TcsSessionTime.html" target="_self" >TcsSessionTime</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Session time</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getGroup"></a>
+                    <span class="name">
+                        <b>
+                            getGroup
+                        </b>
+                        <a href="#getGroup"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getGroup()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="200"
+                            class="link-to-prism">src/src/modules/core/player/server/classes/srv_player.ts:200</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Get the current player&#39;s group</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../miscellaneous/enumerations.html#TcsGroups" target="_self" >TcsGroups</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Player&#39;s group</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getId"></a>
+                    <span class="name">
+                        <b>
+                            getId
+                        </b>
+                        <a href="#getId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getId()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="152"
+                            class="link-to-prism">src/src/modules/core/player/server/classes/srv_player.ts:152</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Get the TCS player&#39;s ID</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>TCS player&#39;s ID</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPunishments"></a>
+                    <span class="name">
+                        <b>
+                            getPunishments
+                        </b>
+                        <a href="#getPunishments"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getPunishments()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="168"
+                            class="link-to-prism">src/src/modules/core/player/server/classes/srv_player.ts:168</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Get the player&#39;s punishments history</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/TcsPunishmentsList.html" target="_self" >TcsPunishmentsList</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Player&#39;s punishments</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getSessionTime"></a>
+                    <span class="name">
+                        <b>
+                            getSessionTime
+                        </b>
+                        <a href="#getSessionTime"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getSessionTime()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="238"
+                            class="link-to-prism">src/src/modules/core/player/server/classes/srv_player.ts:238</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Get the current session time</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/TcsSessionTime.html" target="_self" >TcsSessionTime</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Session time</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getSource"></a>
+                    <span class="name">
+                        <b>
+                            getSource
+                        </b>
+                        <a href="#getSource"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getSource()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="144"
+                            class="link-to-prism">src/src/modules/core/player/server/classes/srv_player.ts:144</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Get the FiveM player&#39;s source</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>FiveM player&#39;s source</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hasPermission"></a>
+                    <span class="name">
+                        <b>
+                            hasPermission
+                        </b>
+                        <a href="#hasPermission"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>hasPermission(permission: <a href="../undefineds/TcsPermissions.html">TcsPermissions</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="227"
+                            class="link-to-prism">src/src/modules/core/player/server/classes/srv_player.ts:227</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Check if the player has the specified permission</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>permission</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/enumerations.html#TcsPermissions" target="_self" >TcsPermissions</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Permission to check</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>True if the current player has the specified permission</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isReady"></a>
+                    <span class="name">
+                        <b>
+                            isReady
+                        </b>
+                        <a href="#isReady"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isReady()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="160"
+                            class="link-to-prism">src/src/modules/core/player/server/classes/srv_player.ts:160</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Check if the player has loaded and retrieved his informations</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>True if the player has loaded</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="msToTime"></a>
+                    <span class="name">
+                        <b>
+                            msToTime
+                        </b>
+                        <a href="#msToTime"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>msToTime(diff: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="263"
+                            class="link-to-prism">src/src/modules/core/player/server/classes/srv_player.ts:263</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Convert ms to session time</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>diff</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>ms to convert</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="../interfaces/TcsSessionTime.html" target="_self" >TcsSessionTime</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Converted ms to session time</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="retrievingInformations"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Async</span>
+                            retrievingInformations
+                        </b>
+                        <a href="#retrievingInformations"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>retrievingInformations()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="103"
+                            class="link-to-prism">src/src/modules/core/player/server/classes/srv_player.ts:103</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Retrieve player informations or create a new document if the player&#39;s informations don&#39;t exist</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setGroup"></a>
+                    <span class="name">
+                        <b>
+                            setGroup
+                        </b>
+                        <a href="#setGroup"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setGroup(newGroup: <a href="../undefineds/TcsGroups.html">TcsGroups</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="208"
+                            class="link-to-prism">src/src/modules/core/player/server/classes/srv_player.ts:208</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Set the new player&#39;s group</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>newGroup</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/enumerations.html#TcsGroups" target="_self" >TcsGroups</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>New group of the player</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">class TcsPlayer {
+	private source: number;
+	private playerId: string;
+	private licenses: Licenses;
+	private punishments: TcsPunishmentsList;
+	private wholeSession: number;
+	private sessionStart: number;
+
+	private characters: TcsCharacter[];
+
+	private group: TcsGroups;
+
+	private ready: boolean;
+
+	constructor(source: number) {
+		this.source &#x3D; source;
+
+		this.playerId &#x3D; &#x27;-1&#x27;;
+		this.punishments &#x3D; {
+			warns: [],
+			kicks: [],
+			bans: [],
+		};
+		this.wholeSession &#x3D; 0;
+		this.sessionStart &#x3D; +new Date();
+		this.group &#x3D; TcsGroups.PLAYER;
+
+		this.characters &#x3D; [];
+
+		this.ready &#x3D; false;
+
+		const playerLicenses &#x3D; getPlayerIdentifiers(source);
+
+		this.licenses &#x3D; {
+			steam: playerLicenses.find((l) &#x3D;&gt; l.indexOf(&#x27;steam:&#x27;) &gt; -1),
+			discord: playerLicenses.find((l) &#x3D;&gt; l.indexOf(&#x27;discord:&#x27;) &gt; -1),
+			license: playerLicenses.find((l) &#x3D;&gt; l.indexOf(&#x27;license:&#x27;) &gt; -1),
+			xbl: playerLicenses.find((l) &#x3D;&gt; l.indexOf(&#x27;xbl:&#x27;) &gt; -1),
+		};
+
+		TCS.debug(&#x27;Retieving player...&#x27;);
+		this.retrievingInformations();
+	}
+
+	private async fetchPunishments() {
+		TCS.debug(&#x60;Fetching punishements for player ${this.playerId}&#x60;);
+		const punishments &#x3D; await TCS.database
+			?.database()
+			.get([&#x27;punishments&#x27;], {
+				playerId: this.playerId,
+			})
+			.execute();
+
+		if (punishments) {
+			this.punishments &#x3D; {
+				bans: punishments
+					.filter((pn) &#x3D;&gt; pn.data?.type &#x3D;&#x3D;&#x3D; &#x27;ban&#x27;)
+					.map((pn) &#x3D;&gt; pn.data as TcsPunishment),
+				kicks: punishments
+					.filter((pn) &#x3D;&gt; pn.data?.type &#x3D;&#x3D;&#x3D; &#x27;kick&#x27;)
+					.map((pn) &#x3D;&gt; pn.data as TcsPunishment),
+				warns: punishments
+					.filter((pn) &#x3D;&gt; pn.data?.type &#x3D;&#x3D;&#x3D; &#x27;warn&#x27;)
+					.map((pn) &#x3D;&gt; pn.data as TcsPunishment),
+			};
+		}
+	}
+
+	private async fetchCharacters() {
+		TCS.debug(&#x60;Fetching characters for player ${this.playerId}&#x60;);
+		const characters &#x3D; await TCS.database
+			?.database()
+			.get([PLAYER_MODULE_CHARACTERS_TABLE], {
+				playerId: this.playerId,
+			})
+			.execute();
+
+		if (!characters) {
+			this.characters &#x3D; [];
+			return;
+		}
+
+		this.characters &#x3D; characters.map(
+			(character) &#x3D;&gt;
+				new TcsCharacter(
+					this,
+					character.id,
+					character.data?.informations,
+					character.data?.skin
+				)
+		);
+	}
+
+	/**
+	 * Retrieve player informations or create a new document if the player&#x27;s informations don&#x27;t exist
+	 */
+	async retrievingInformations() {
+		const player &#x3D; await TCS.database
+			?.database()
+			.get([PLAYER_MODULE_PLAYERS_TABLE], {
+				discord: this.licenses.discord,
+			})
+			.executeOne();
+
+		if (!player) {
+			const newPlayer &#x3D; await TCS.database
+				?.database()
+				.insert(PLAYER_MODULE_PLAYERS_TABLE, {
+					...this.licenses,
+					group: this.group,
+					sessionTime: 0,
+				});
+
+			if (newPlayer) {
+				this.playerId &#x3D; newPlayer.id;
+			}
+
+			this.ready &#x3D; true;
+			return;
+		}
+
+		this.playerId &#x3D; player.id;
+		this.group &#x3D; player.data?.group;
+		this.wholeSession &#x3D; player.data?.sessionTime;
+
+		this.setGroup(TcsGroups.ADMIN);
+
+		await this.fetchPunishments();
+		await this.fetchCharacters();
+
+		this.ready &#x3D; true;
+	}
+
+	/**
+	 * Get the FiveM player&#x27;s source
+	 * @returns FiveM player&#x27;s source
+	 */
+	getSource() {
+		return this.source;
+	}
+
+	/**
+	 * Get the TCS player&#x27;s ID
+	 * @returns TCS player&#x27;s ID
+	 */
+	getId() {
+		return this.playerId;
+	}
+
+	/**
+	 * Check if the player has loaded and retrieved his informations
+	 * @returns True if the player has loaded
+	 */
+	isReady() {
+		return this.ready;
+	}
+
+	/**
+	 * Get the player&#x27;s punishments history
+	 * @returns Player&#x27;s punishments
+	 */
+	getPunishments() {
+		return this.punishments;
+	}
+
+	/**
+	 * Add the specified punishment to the player&#x27;s history
+	 * @param punishment New punishment to add to the player&#x27;s history
+	 */
+	async addPunishment(punishment: TcsPunishment) {
+		await TCS.database?.database().insert(&#x27;punishments&#x27;, punishment);
+
+		switch (punishment.type) {
+			case &#x27;ban&#x27;:
+				this.punishments.bans.push(punishment);
+				break;
+			case &#x27;kick&#x27;:
+				this.punishments.kicks.push(punishment);
+				break;
+
+			case &#x27;warn&#x27;:
+				this.punishments.warns.push(punishment);
+				break;
+
+			default:
+				TCS.error(&#x60;Invalid punishment type &quot;${punishment.type}&quot;&#x60;);
+		}
+	}
+
+	/**
+	 * Get the current player&#x27;s group
+	 * @returns Player&#x27;s group
+	 */
+	getGroup() {
+		return this.group;
+	}
+
+	/**
+	 * Set the new player&#x27;s group
+	 * @param newGroup New group of the player
+	 */
+	setGroup(newGroup: TcsGroups) {
+		this.group &#x3D; newGroup;
+
+		TCS.database?.database().update(
+			PLAYER_MODULE_PLAYERS_TABLE,
+			{
+				id: this.playerId,
+			},
+			{
+				group: this.group,
+			}
+		);
+	}
+
+	/**
+	 * Check if the player has the specified permission
+	 * @param permission Permission to check
+	 * @returns True if the current player has the specified permission
+	 */
+	hasPermission(permission: TcsPermissions) {
+		return (
+			GroupsPermissionsConfig[this.group].includes(TcsPermissions.ALL) ||
+			GroupsPermissionsConfig[this.group].includes(permission)
+		);
+	}
+
+	/**
+	 * Get the current session time
+	 * @returns Session time
+	 */
+	getSessionTime(): TcsSessionTime {
+		const currentTime &#x3D; +new Date();
+		const diff &#x3D; Math.abs(currentTime - this.sessionStart);
+
+		return this.msToTime(diff);
+	}
+
+	/**
+	 * Get the all sessions time
+	 * @returns Session time
+	 */
+	getAllSessionsTime(): TcsSessionTime {
+		const currentTime &#x3D; +new Date();
+		const diff &#x3D; Math.abs(currentTime - this.sessionStart);
+
+		const allSessions &#x3D; this.wholeSession + diff;
+
+		return this.msToTime(allSessions);
+	}
+
+	/**
+	 * Convert ms to session time
+	 * @param diff ms to convert
+	 * @returns Converted ms to session time
+	 */
+	msToTime(diff: number): TcsSessionTime {
+		const weeks &#x3D; Math.floor(diff / (7 * 24 * 60 * 60 * 1000));
+		const weeksms &#x3D; diff % (7 * 24 * 60 * 60 * 1000);
+		const days &#x3D; Math.floor(weeksms / (24 * 60 * 60 * 1000));
+		const daysms &#x3D; diff % (24 * 60 * 60 * 1000);
+		const hours &#x3D; Math.floor(daysms / (60 * 60 * 1000));
+		const hoursms &#x3D; diff % (60 * 60 * 1000);
+		const minutes &#x3D; Math.floor(hoursms / (60 * 1000));
+		const minutesms &#x3D; diff % (60 * 1000);
+		const sec &#x3D; Math.floor(minutesms / 1000);
+
+		return {
+			weeks: weeks,
+			days: days,
+			hours: hours,
+			minutes: minutes,
+			seconds: sec,
+		};
+	}
+	/**
+	 * Save current player session
+	 */
+	disconnect() {
+		const currentTime &#x3D; +new Date();
+		const diff &#x3D; Math.abs(currentTime - this.sessionStart);
+
+		this.wholeSession +&#x3D; diff;
+		TCS.database?.database().update(
+			PLAYER_MODULE_PLAYERS_TABLE,
+			{
+				id: this.playerId,
+			},
+			{
+				sessionTime: this.wholeSession,
+			}
+		);
+	}
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'TcsPlayer.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

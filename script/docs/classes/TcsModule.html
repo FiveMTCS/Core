@@ -1,0 +1,1384 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>TCS</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/laravel.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">TCS</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content class">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Classes</li>
+  <li>TcsModule</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/src/core/librairies/modules/mixed_module.ts</code>
+        </p>
+
+
+
+
+            <p class="comment">
+                <h3>Example</h3>
+            </p>
+            <div class="io-description">
+            </div>
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#destroyMethod">destroyMethod</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#launchMethod">launchMethod</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#moduleFunctions">moduleFunctions</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#moduleInfos">moduleInfos</a>
+                            </li>
+                            <li>
+                                <a href="#moduleLaunched">moduleLaunched</a>
+                            </li>
+                            <li>
+                                <a href="#shouldLaunch">shouldLaunch</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#checkVersion">checkVersion</a>
+                            </li>
+                            <li>
+                                <a href="#createFunction">createFunction</a>
+                            </li>
+                            <li>
+                                <a href="#destroyModule">destroyModule</a>
+                            </li>
+                            <li>
+                                <a href="#fnc">fnc</a>
+                            </li>
+                            <li>
+                                <a href="#getDependencies">getDependencies</a>
+                            </li>
+                            <li>
+                                <a href="#getId">getId</a>
+                            </li>
+                            <li>
+                                <a href="#initModule">initModule</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#isVersionSuperior">isVersionSuperior</a>
+                            </li>
+                            <li>
+                                <a href="#printDebug">printDebug</a>
+                            </li>
+                            <li>
+                                <a href="#setDestroyModule">setDestroyModule</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(moduleInfos: <a href="../interfaces/TcsModuleInfos.html">TcsModuleInfos | null</a>, launchMethod: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" target="_blank">Function</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/src/core/librairies/modules/mixed_module.ts:15</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Create a new Tcs module instance</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>moduleInfos</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../interfaces/TcsModuleInfos.html" target="_self" >TcsModuleInfos | null</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>launchMethod</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" target="_blank" >Function</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>Method to launch when the module is ready</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="destroyMethod"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            destroyMethod</b>
+                            <a href="#destroyMethod"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" target="_blank" >Function</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/src/core/librairies/modules/mixed_module.ts:11</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="launchMethod"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            launchMethod</b>
+                            <a href="#launchMethod"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" target="_blank" >Function</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/src/core/librairies/modules/mixed_module.ts:10</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="moduleFunctions"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            moduleFunctions</b>
+                            <a href="#moduleFunctions"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Record&lt;string | Function&gt;</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/src/core/librairies/modules/mixed_module.ts:12</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="moduleInfos"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            moduleInfos</b>
+                            <a href="#moduleInfos"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/TcsModuleInfos.html" target="_self" >TcsModuleInfos</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="9" class="link-to-prism">src/src/core/librairies/modules/mixed_module.ts:9</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="moduleLaunched"></a>
+                        <span class="name">
+                            <b>
+                            moduleLaunched</b>
+                            <a href="#moduleLaunched"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank" >Boolean</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/src/core/librairies/modules/mixed_module.ts:14</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="shouldLaunch"></a>
+                        <span class="name">
+                            <b>
+                            shouldLaunch</b>
+                            <a href="#shouldLaunch"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean" target="_blank" >Boolean</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/src/core/librairies/modules/mixed_module.ts:15</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+            <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="checkVersion"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            checkVersion
+                        </b>
+                        <a href="#checkVersion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>checkVersion()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="143"
+                            class="link-to-prism">src/src/core/librairies/modules/mixed_module.ts:143</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Check with github the last version of the module to know if the current module is up to date.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createFunction"></a>
+                    <span class="name">
+                        <b>
+                            createFunction
+                        </b>
+                        <a href="#createFunction"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>createFunction(name: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, exec: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" target="_blank">Function</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="52"
+                            class="link-to-prism">src/src/core/librairies/modules/mixed_module.ts:52</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Declare a function in the current module</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>name</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Name of the function</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>exec</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" target="_blank" >Function</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Function to execute</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="destroyModule"></a>
+                    <span class="name">
+                        <b>
+                            destroyModule
+                        </b>
+                        <a href="#destroyModule"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>destroyModule()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="96"
+                            class="link-to-prism">src/src/core/librairies/modules/mixed_module.ts:96</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Stop the module</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fnc"></a>
+                    <span class="name">
+                        <b>
+                            fnc
+                        </b>
+                        <a href="#fnc"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>fnc(name: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="61"
+                            class="link-to-prism">src/src/core/librairies/modules/mixed_module.ts:61</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Get a created function by its name</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>name</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Name of the function to get</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>The function assigned with the name</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getDependencies"></a>
+                    <span class="name">
+                        <b>
+                            getDependencies
+                        </b>
+                        <a href="#getDependencies"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getDependencies()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="81"
+                            class="link-to-prism">src/src/core/librairies/modules/mixed_module.ts:81</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Get the list of the current module dependencies</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>Array&lt;string&gt;</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>list of current module dependencies</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getId"></a>
+                    <span class="name">
+                        <b>
+                            getId
+                        </b>
+                        <a href="#getId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getId()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="73"
+                            class="link-to-prism">src/src/core/librairies/modules/mixed_module.ts:73</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Get the id of the current module</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>id of the current module</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="initModule"></a>
+                    <span class="name">
+                        <b>
+                            initModule
+                        </b>
+                        <a href="#initModule"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>initModule()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="120"
+                            class="link-to-prism">src/src/core/librairies/modules/mixed_module.ts:120</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Starts the module</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isVersionSuperior"></a>
+                    <span class="name">
+                        <b>
+                            <span class="modifier">Private</span>
+                            isVersionSuperior
+                        </b>
+                        <a href="#isVersionSuperior"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>isVersionSuperior(current: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, compare: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, currentStep: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="188"
+                            class="link-to-prism">src/src/core/librairies/modules/mixed_module.ts:188</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Check if the current version is superior at the compared one</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>current</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        <p>Latest version number of the module</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>compare</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        <p>Version to compare to</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>currentStep</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>0</code>
+                                    </td>
+
+                                    <td>
+                                        <p>Step on the string version of the module (splitted by dot)</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>Returns true if the current version is superior to the compared version. Returns false if not.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="printDebug"></a>
+                    <span class="name">
+                        <b>
+                            printDebug
+                        </b>
+                        <a href="#printDebug"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>printDebug(message: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, messageColor: <a href="../undefineds/ConsoleColors.html">ConsoleColors</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="209"
+                            class="link-to-prism">src/src/core/librairies/modules/mixed_module.ts:209</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Print a debug message to the console</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Default value</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>message</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        <p>Message to print in the console, a prefix is concatened to it (category/name)</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>messageColor</td>
+                                    <td>
+                                                <code><a href="../miscellaneous/enumerations.html#ConsoleColors" target="_self" >ConsoleColors</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+                                    <td>
+                                        <code>ConsoleColors.YELLOW</code>
+                                    </td>
+
+                                    <td>
+                                        <p>Color of the current message in the console, yellow by default</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="setDestroyModule"></a>
+                    <span class="name">
+                        <b>
+                            setDestroyModule
+                        </b>
+                        <a href="#setDestroyModule"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>setDestroyModule(destroyMethod: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" target="_blank">Function</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="89"
+                            class="link-to-prism">src/src/core/librairies/modules/mixed_module.ts:89</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Set the method that will be called when the module has to be stopped</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>destroyMethod</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function" target="_blank" >Function</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>Method that will be called when the module is stopped</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">class TcsModule {
+	//@ts-ignore
+	private moduleInfos: TcsModuleInfos;
+	private launchMethod: Function;
+	private destroyMethod: Function;
+	private moduleFunctions: Record&lt;string, Function&gt;;
+
+	moduleLaunched: Boolean;
+	shouldLaunch: Boolean;
+
+	/**
+	 * Create a new Tcs module instance
+	 * @param moduleType Type of the current module
+	 * @param moduleName Name of the current module, as if it was a ressource
+	 * @param launchMethod Method to launch when the module is ready
+	 * @param moduleDependencies List of modules ids this module depends on
+	 */
+	constructor(moduleInfos: TcsModuleInfos | null, launchMethod: Function) {
+		this.shouldLaunch &#x3D; true;
+
+		if (moduleInfos !&#x3D; null) {
+			this.moduleInfos &#x3D; moduleInfos;
+
+			if (
+				TCS_CONFIG.versionningCheck &amp;&amp;
+				TCS.isServerSided &amp;&amp;
+				this.moduleInfos.git
+			) {
+				this.checkVersion();
+			}
+		} else {
+			this.shouldLaunch &#x3D; false;
+		}
+		this.launchMethod &#x3D; launchMethod;
+		this.destroyMethod &#x3D; () &#x3D;&gt; {};
+		this.moduleLaunched &#x3D; false;
+
+		this.moduleFunctions &#x3D; {};
+	}
+
+	/**
+	 * Declare a function in the current module
+	 * @param name Name of the function
+	 * @param exec Function to execute
+	 */
+	createFunction(name: string, exec: Function) {
+		this.moduleFunctions[name] &#x3D; exec;
+	}
+
+	/**
+	 * Get a created function by its name
+	 * @param name Name of the function to get
+	 * @returns The function assigned with the name
+	 */
+	fnc(name: string) {
+		if (!this.moduleFunctions[name])
+			return () &#x3D;&gt;
+				this.printDebug(&#x60;${ConsoleColors.RED}Function ${name} isn&#x27;t declared&#x60;);
+
+		return this.moduleFunctions[name];
+	}
+
+	/**
+	 * Get the id of the current module
+	 * @returns id of the current module
+	 */
+	getId(): string {
+		return &#x60;${this.moduleInfos.moduleType}/${this.moduleInfos.moduleName}&#x60;;
+	}
+
+	/**
+	 * Get the list of the current module dependencies
+	 * @returns list of current module dependencies
+	 */
+	getDependencies(): Array&lt;string&gt; {
+		return this.moduleInfos.dependencies || [];
+	}
+
+	/**
+	 * Set the method that will be called when the module has to be stopped
+	 * @param destroyMethod Method that will be called when the module is stopped
+	 */
+	setDestroyModule(destroyMethod: Function) {
+		this.destroyMethod &#x3D; destroyMethod;
+	}
+
+	/**
+	 * Stop the module
+	 */
+	destroyModule() {
+		this.printDebug(&#x27;Shutting down module !&#x27;, ConsoleColors.RED);
+		try {
+			TCS.threads.removeThreadByModule(this);
+			this.moduleLaunched &#x3D; false;
+			this.shouldLaunch &#x3D; false;
+			this.destroyMethod();
+			this.printDebug(
+				&#x27;Module has been stopped correctly !&#x27;,
+				ConsoleColors.GREEN
+			);
+		} catch (e) {
+			this.printDebug(
+				&#x27;An error has been thrown while shutting down the module !&#x27;,
+				ConsoleColors.RED
+			);
+			console.log(ConsoleColors.RED, e.message, ConsoleColors.RESET);
+			this.shouldLaunch &#x3D; false;
+		}
+	}
+
+	/**
+	 * Starts the module
+	 */
+	initModule() {
+		this.printDebug(&#x27;Starting module !&#x27;);
+		try {
+			if (onLoadModuleFunctions[this.getId()])
+				onLoadModuleFunctions[this.getId()].forEach((fnc) &#x3D;&gt; fnc(this));
+
+			this.launchMethod(this);
+			TCS.lang.loadModuleLang(this, TCS_CONFIG.lang);
+			this.moduleLaunched &#x3D; true;
+			this.printDebug(&#x27;Module has been started !&#x27;, ConsoleColors.GREEN);
+		} catch (e) {
+			this.printDebug(
+				&#x27;An error has been thrown while starting the module !&#x27;,
+				ConsoleColors.RED
+			);
+			console.error(ConsoleColors.RED, e, ConsoleColors.RESET);
+			this.shouldLaunch &#x3D; false;
+		}
+	}
+
+	/**
+	 * Check with github the last version of the module to know if the current module is up to date.
+	 */
+	private checkVersion() {
+		const https &#x3D; require(&#x27;https&#x27;);
+		const options &#x3D; {
+			hostname: &#x27;raw.githubusercontent.com&#x27;,
+			port: 443,
+			path: &#x60;/${this.moduleInfos.git}/main/.tcs.json&#x60;,
+			method: &#x27;GET&#x27;,
+		};
+
+		const req &#x3D; https.request(options, (res: any) &#x3D;&gt; {
+			res.on(&#x27;data&#x27;, (d: any) &#x3D;&gt; {
+				const buf &#x3D; Buffer.from(d);
+				const json &#x3D; JSON.parse(buf.toString(&#x27;utf-8&#x27;));
+
+				if (!json.version) {
+					return;
+				}
+				if (this.isVersionSuperior(json.version, this.moduleInfos.version)) {
+					TCS.warning(
+						&#x60;Module ${this.getId()} has a new version (current: ${
+							this.moduleInfos.version
+						} | new version : ${json.version}) ! \n${
+							ConsoleColors.YELLOW
+						}You can download it at : https://github.com/${
+							this.moduleInfos.git
+						}${ConsoleColors.RESET}&#x60;
+					);
+				}
+			});
+		});
+
+		req.on(&#x27;error&#x27;, (error: any) &#x3D;&gt; {
+			console.error(error);
+		});
+
+		req.end();
+	}
+
+	/**
+	 * Check if the current version is superior at the compared one
+	 * @param current Latest version number of the module
+	 * @param compare Version to compare to
+	 * @param currentStep Step on the string version of the module (splitted by dot)
+	 * @returns Returns true if the current version is superior to the compared version. Returns false if not.
+	 */
+	private isVersionSuperior(
+		current: string,
+		compare: string,
+		currentStep: number &#x3D; 0
+	): boolean {
+		const currentNumber &#x3D; parseInt(current.split(&#x27;.&#x27;)[currentStep]);
+		const compareNumber &#x3D; parseInt(compare.split(&#x27;.&#x27;)[currentStep]);
+
+		if (currentNumber &#x3D;&#x3D; compareNumber) {
+			if (currentStep &#x3D;&#x3D; 2) return false;
+			return this.isVersionSuperior(current, compare, currentStep + 1);
+		} else {
+			return currentNumber &gt; compareNumber;
+		}
+	}
+
+	/**
+	 * Print a debug message to the console
+	 * @param message Message to print in the console, a prefix is concatened to it (category/name)
+	 * @param messageColor Color of the current message in the console, yellow by default
+	 */
+	printDebug(
+		message: string,
+		messageColor: ConsoleColors &#x3D; ConsoleColors.YELLOW
+	) {
+		if (TCS_CONFIG.debugMode)
+			console.log(
+				&#x60;${ConsoleColors.BLUE} [${this.getId()}] ${messageColor}&#x60;,
+				message,
+				ConsoleColors.RESET
+			);
+	}
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'TcsModule.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

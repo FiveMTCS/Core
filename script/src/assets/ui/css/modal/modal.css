@@ -1,0 +1,66 @@
+.modal {
+	min-width: 400px;
+	max-height: 400px;
+	max-width: 800px;
+
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	padding: 10px 20px;
+
+	border-radius: 20px;
+
+	z-index: 90;
+
+	animation: slidein-bottom-absolute 1s;
+
+	overflow: hidden;
+
+	background-color: #fafafa;
+}
+
+.modal .title {
+	background-color: #ffffff;
+}
+
+.modal h1 {
+	color: #818181;
+	height: 40px;
+	width: 100%;
+}
+
+.modal .description {
+	margin: 20px 0px;
+
+	height: auto;
+}
+
+.modal .description p {
+	color: #a3a3a3;
+}
+
+.modal .buttons {
+	height: 42px;
+	width: 100%;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.modal .buttons button {
+	padding: 7px 30px;
+	border-radius: 10px;
+
+	border: none;
+	color: rgb(92, 92, 92);
+	margin-left: 15px;
+}
+
+.modal .buttons button:last-child {
+	background-color: rgb(45, 135, 209);
+	color: white;
+}

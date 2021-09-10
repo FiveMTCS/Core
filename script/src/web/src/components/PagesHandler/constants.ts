@@ -1,0 +1,5 @@
+export enum MainMenus {
+	IDLE,
+	CHARACTERS_SELECTION,
+	CREATE_CHARACTER,
+}

@@ -1,0 +1,4 @@
+{
+    "playerDropped": "[system] Le joueur {playerName} s'est déconnecté. Raison: {reason}.",
+    "playerConnecting": "[system] Le joueur {playerName} se connecte au serveur."
+}
