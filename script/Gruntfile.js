@@ -9,7 +9,7 @@ module.exports = function (grunt) {
 				files: [
 					{
 						force: true,
-						src: ['../build/src/**/*', '../build/assets/**/*'],
+						src: ['../build/**/*'],
 					},
 				],
 			},
@@ -18,13 +18,23 @@ module.exports = function (grunt) {
 					{
 						force: true,
 						src: [
-							'./src/src/**/*.js',
-							'./src/src/**/*.js.map',
+							'./src/client/**/*.js',
+							'./src/client/**/*.js.map',
+							'./src/client/**/*.d.ts',
+
+							'./src/mixed/**/*.js',
+							'./src/mixed/**/*.js.map',
+							'./src/mixed/**/*.d.ts',
+
+							'./src/server/**/*.js',
+							'./src/server/**/*.js.map',
+							'./src/server/**/*.d.ts',
+
 							'./src/assets/**/*.js',
 							'./src/assets/**/*.js.map',
-							'./**/*.js.map',
-							'./src/src/**/*.d.ts',
 							'./src/assets/**.d.ts',
+
+							'./**/*.js.map',
 							'!./**/ui/**/*.js',
 						],
 					},
@@ -32,7 +42,7 @@ module.exports = function (grunt) {
 			},
 		},
 		copy: {
-			files: {
+			assets: {
 				cwd: './src/assets',
 				src: [
 					'**/*',
@@ -40,76 +50,92 @@ module.exports = function (grunt) {
 					'!**/*.d.ts',
 					'!**/*.ts.example',
 					'!**/*.js.map',
+					'!**/tsconfig.json',
 				],
 				dest: '../build/assets/',
 				expand: true,
 			},
-			sources: {
-				cwd: './src/src',
+			client: {
+				cwd: './src/client',
 				src: [
 					'**/*',
 					'!**/*.ts',
 					'!**/*.d.ts',
 					'!**/*.ts.example',
 					'!**/*.js.map',
+					'!**/tsconfig.json',
 				],
-				dest: '../build/src/',
+				dest: '../build/src/client',
+				expand: true,
+			},
+			mixed: {
+				cwd: './src/mixed',
+				src: [
+					'**/*',
+					'!**/*.ts',
+					'!**/*.d.ts',
+					'!**/*.ts.example',
+					'!**/*.js.map',
+					'!**/tsconfig.json',
+				],
+				dest: '../build/src/mixed',
+				expand: true,
+			},
+			server: {
+				cwd: './src/server',
+				src: [
+					'**/*',
+					'!**/*.ts',
+					'!**/*.d.ts',
+					'!**/*.ts.example',
+					'!**/*.js.map',
+					'!**/tsconfig.json',
+				],
+				dest: '../build/src/server',
 				expand: true,
 			},
 		},
 		ts: {
-			options: {
-				target: 'es6',
-				module: 'commonjs',
-				declaration: false,
-				strict: true,
-				moduleResolution: 'node',
-				types: ['@types/node', '@citizenfx/client'],
-				esModuleInterop: true,
-				skipLibCheck: true,
-				forceConsistentCasingInFileNames: true,
+			client: {
+				src: ['./src/client/**/*.ts'],
+				tsconfig: './src/client/tsconfig.json',
 			},
-			files: {
-				src: ['./src/**/*.ts', '!./src/web/**/*.ts'],
+			server: {
+				src: ['./src/server/**/*.ts'],
+				tsconfig: './src/server/tsconfig.json',
+			},
+			mixed: {
+				src: ['./src/mixed/**/*.ts'],
 			},
 		},
 		uglify: {
 			client: {
-				src: [
-					'src/src/core/**/cli_*.js',
-					'src/src/**/cli_*.js',
-					'!src/src/cli_*.js',
-					'src/src/cli_*.js',
-				], // source files mask
-				dest: '../build/src/', // destination folder
+				src: ['src/client/**/*.js', '!src/client/*.js', 'src/client/*.js'], // source files mask
+				dest: '../build/', // destination folder
 				expand: true, // allow dynamic building
 				ext: '.min.js', // replace .js to .min.js
 				toplevel: true,
 				rename: function (dest, src) {
 					return (
-						dest + src.substring(0, src.indexOf('/') + 1) + 'cli_code.min.js'
+						dest + src.substring(0, src.indexOf('/') + 1) + 'client.min.js'
 					);
 				},
 			},
 			server: {
-				src: ['src/src/**/srv_*.js'], // source files mask
-				dest: '../build/src/', // destination folder
+				src: ['src/server/**/*.js'], // source files mask
+				dest: '../build/', // destination folder
 				expand: true, // allow dynamic building
 				ext: '.min.js', // replace .js to .min.js
 				toplevel: true,
 				rename: function (dest, src) {
 					return (
-						dest + src.substring(0, src.indexOf('/') + 1) + 'srv_code.min.js'
+						dest + src.substring(0, src.indexOf('/') + 1) + 'server.min.js'
 					);
 				},
 			},
 			mixed: {
-				src: [
-					'src/src/**/mixed_*.js',
-					'!src/src/mixed_*.js',
-					'src/src/mixed_*.js',
-				], // source files mask
-				dest: '../build/src/', // destination folder
+				src: ['src/mixed/**/*.js', '!src/mixed/*.js', 'src/mixed/*.js'], // source files mask
+				dest: '../build/', // destination folder
 				expand: true, // allow dynamic building
 				ext: '.min.js', // replace .js to .min.js
 				toplevel: true,
@@ -121,13 +147,41 @@ module.exports = function (grunt) {
 			},
 		},
 		watch: {
-			js: {
-				files: 'src/src/**/*.ts',
+			client: {
+				files: 'src/client/**/*.ts',
 				tasks: [
 					'forceOn',
-					'newer:ts',
+					'newer:ts:client',
 					'forceOff',
-					'newer:copy:sources',
+					'newer:copy:client',
+					'clean:sources',
+				],
+				options: {
+					interrupt: true,
+					force: true,
+				},
+			},
+			server: {
+				files: 'src/server/**/*.ts',
+				tasks: [
+					'forceOn',
+					'newer:ts:server',
+					'forceOff',
+					'newer:copy:server',
+					'clean:sources',
+				],
+				options: {
+					interrupt: true,
+					force: true,
+				},
+			},
+			mixed: {
+				files: 'src/mixed/**/*.ts',
+				tasks: [
+					'forceOn',
+					'newer:ts:mixed',
+					'forceOff',
+					'newer:copy:mixed',
 					'clean:sources',
 				],
 				options: {
@@ -162,17 +216,18 @@ module.exports = function (grunt) {
 	// register at least this one task
 	grunt.registerTask('build', [
 		'clean:build',
-		'ts',
+		'ts:client',
+		'ts:server',
 		'uglify',
-		'copy:files',
+		'copy:*',
 		'clean:sources',
 	]);
 
 	grunt.registerTask('build-dev', [
 		'clean:build',
-		'ts',
-		'copy:sources',
-		'copy:files',
+		'ts:client',
+		'ts:server',
+		'copy:*',
 		'clean:sources',
 	]);
 	grunt.registerTask('clean-web', ['clean:sources']);

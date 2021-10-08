@@ -1,7 +1,7 @@
 /**
  * @author Anthony Robert
- * @version 1.1.0
- * @since 1.1.0
+ * @version 0.1.0
+ * @since 0.1.0
  */
 
 const itemsList: Record<string, Item> = {

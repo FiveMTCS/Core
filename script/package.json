@@ -4,8 +4,8 @@
 	"description": "tcs",
 	"scripts": {
 		"jsClean": "del /S src\\*.js",
-		"build:prod": "npx grunt build",
-		"build:dev": "npx grunt build-dev",
+		"build:prod": "npx grunt build && cd src/web && npm run build && cd ../..",
+		"build:dev": "npx grunt build-dev && cd src/web && npm run build && cd ../..",
 		"dev": "npx grunt dev"
 	},
 	"keywords": [

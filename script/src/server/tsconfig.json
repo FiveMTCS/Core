@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "types": ["../../node_modules/@types/node", "../../node_modules/@citizenfx/server"]
+  },
+  "include": ["./**/*.ts", "../mixed/**/*.ts", "../assets/**/*.ts"],
+  "exclude": ["../assets/cli_*.ts", "../client/**/*.ts", "../web/**/*.ts"]
+}

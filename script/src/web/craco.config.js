@@ -6,9 +6,8 @@ module.exports = {
 			// lets use the best we can get in line with `eval-source-map`
 			if (webpackConfig.mode === 'development' && process.env.IN_GAME_DEV) {
 				webpackConfig.devtool = 'eval-source-map';
-				webpackConfig.output.path = path.join(__dirname, '/../../../build/web');
 			}
-
+			webpackConfig.output.path = path.join(__dirname, '/../../../build/web');
 			webpackConfig.output.publicPath = './';
 
 			return webpackConfig;
