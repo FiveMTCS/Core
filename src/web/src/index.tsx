@@ -11,23 +11,23 @@ import common_en from './translations/en/common.json';
 import 'rc-slider/assets/index.css';
 
 i18next.init({
-	interpolation: { escapeValue: false }, // React already does escaping
-	lng: 'fr', // language to use
-	resources: {
-		en: {
-			common: common_en, // 'common' is our custom namespace
-		},
-		fr: {
-			common: common_fr,
-		},
-	},
+    interpolation: { escapeValue: false }, // React already does escaping
+    lng: 'fr', // language to use
+    resources: {
+        en: {
+            common: common_en, // 'common' is our custom namespace
+        },
+        fr: {
+            common: common_fr,
+        },
+    },
 });
 
 ReactDOM.render(
-	<React.StrictMode>
-		<I18nextProvider i18n={i18next}>
-			<App />
-		</I18nextProvider>
-	</React.StrictMode>,
-	document.getElementById('root')
+    <React.StrictMode>
+        <I18nextProvider i18n={i18next}>
+            <App />
+        </I18nextProvider>
+    </React.StrictMode>,
+    document.getElementById('root'),
 );

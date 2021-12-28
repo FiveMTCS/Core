@@ -40,7 +40,7 @@ module.exports = {
     },
     output: {
         filename: 'main.js',
-        path: __dirname + '/dist/server/',
+        path: __dirname + 'dist/server/',
     },
     externals: nodeModules,
 };

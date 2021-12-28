@@ -10,8 +10,9 @@ version '1.1.0'
 
 resource_type 'gametype' { name = 'TCS' }
 
-webpack_config 'webpacks/server.config.js'
-webpack_config 'webpacks/client.config.js'
+webpack_config 'server.config.js'
+webpack_config 'client.config.js'
+webpack_config 'web.config.js'
 
 client_script 'dist/client/main.js'
 server_script 'dist/server/main.js'

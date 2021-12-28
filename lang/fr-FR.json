@@ -2,7 +2,7 @@
     "core.initializing": "Initialisation de TCS en cours...",
     "core.ready": "TCS est prêt à être utilisé !",
     "database.connecting": "Connexion à la base de données en cours...",
-    "database.connected": "Connexion à la basee de données établie !",
+    "database.connected": "Connexion à la base de données établie !",
     "callbacks.error.notExist": "Le callback {name} n'existe pas !",
     "player.dropped": "[Système] Le joueur {playerName} s'est déconnecté. Raison: \"{reason}\".",
     "player.connecting": "[Système] Le joueur {playerName} se connecte au serveur.",
