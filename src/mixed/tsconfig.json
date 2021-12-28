@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "types": ["../../node_modules/@types/node", "../../node_modules/@citizenfx/client"],
+        "paths": {
+            "config/*": ["../config/*"],
+        },
+    },
+    "include": ["./**/*.ts", "../mixed/**/*.ts", "../assets/**/mixed_*.ts"],
+}

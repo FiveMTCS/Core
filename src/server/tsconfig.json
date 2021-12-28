@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "types": ["../../node_modules/@types/node", "../../node_modules/@citizenfx/server"],
+    "paths": {
+      "types/*": ["./types/*"],
+      "libraries/*": ["./libraries/*"],
+      "TcsModules/*": ["./modules/*"],
+      "mixed/*": ["../mixed/*"],
+      "config/*": ["../config/*"],
+    }
+  },
+  "include": ["./**/*.ts", "../mixed/**/*.ts", "../assets/**/*.ts"],
+  "exclude": ["../assets/cli_*.ts", "../client/**/*.ts", "../web/**/*.ts"],
+}

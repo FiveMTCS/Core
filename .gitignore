@@ -1,9 +1,10 @@
+dist/
 node_modules/
 .tscache/
 copyToSources.bat
 package-lock.json
 **/*.d.ts
-**/*/srv_databaseConfig.ts
+**/*/databaseConfig.ts
 build/
 **/*/*.tmp.txt
 **/*/yarn.lock

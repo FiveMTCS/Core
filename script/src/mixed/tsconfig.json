@@ -1,6 +1,0 @@
-{
-	"compilerOptions": {
-		"types": ["../../node_modules/@types/node"]
-	},
-	"include": ["./**/*.ts", "../mixed/**/*.ts", "../assets/**/mixed_*.ts"]
-}

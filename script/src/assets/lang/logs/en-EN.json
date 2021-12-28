@@ -1,4 +1,0 @@
-{
-	"playerDropped": "[system] Player {playerName} dropped. Reason: {reason}.",
-	"playerConnecting": "[system] Player {playerName} is connecting to the server."
-}

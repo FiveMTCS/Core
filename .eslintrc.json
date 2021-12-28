@@ -1,0 +1,28 @@
+{
+    "env": {},
+    "extends": [
+        "google",
+        "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:jsdoc/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": "latest"
+    },
+    "plugins": ["@typescript-eslint", "jsdoc"],
+    "rules": {
+        "require-jsdoc": 0,
+        "valid-jsdoc": 0,
+        "new-cap": 0,
+        "object-curly-spacing": 0,
+        "space-before-function-paren": 0,
+        "operator-linebreak": 0,
+        "@typescript-eslint/no-unused-vars": ["error"],
+        "@typescript-eslint/ban-types": 0,
+        "jsdoc/no-undefined-types": 0,
+        "indent": ["error", 4],
+        "max-len": 0
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "core.initializing": "Initializing TCS...",
+    "core.ready": "TCS is ready to go!",
+    "database.connecting": "Connecting to the database...",
+    "database.connected": "Connected successfully to the database!",
+    "callbacks.error.notExist": "Callback {name} does not exist!",
+    "player.dropped": "[System] Player {playerName} dropped. Reason: \"{reason}\".",
+    "player.connecting": "[System] Player {playerName} is connecting to the server.",
+    "player.debug.fecthingPlayer": "Fetching player {playerName}...",
+    "player.debug.fecthingPlayerPunishments": "Fetching player {id} punishments...",
+    "player.debug.newInformations": "Registering new informations for character {id}.",
+    "player.debug.newSkin": "Registering new skin for character {id}."
+}
