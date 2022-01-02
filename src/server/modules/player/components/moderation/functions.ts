@@ -122,8 +122,7 @@ export function banPlayer(
         return true;
     }
 
-    const regex = /([0-9]{1,2}([ymwdhs]|min){1})+/g;
-    const match = regex.exec(duration);
+    const match = duration.split(' ');
     let time = 0;
 
     if (!match) return false;
@@ -137,7 +136,7 @@ export function banPlayer(
         const lastChar = t.substr(-1);
         const value = parseInt(t.substr(0, t.length - 1));
 
-        if (!value) return;
+        if (!value || t.substr(0, t.length - 1).length < 3) return;
 
         switch (lastChar) {
             case 'y':

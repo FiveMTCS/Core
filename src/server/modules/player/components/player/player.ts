@@ -162,6 +162,7 @@ export default class TcsPlayer {
             }
 
             this.ready = true;
+            deferrals?.done();
             return;
         }
 
@@ -483,7 +484,7 @@ export default class TcsPlayer {
             (ban) =>
                 this.playerId.toString() === ban.playerId.toString() &&
                 (ban.duration === null ||
-                    +new Date() > ban.timestamp + ban.duration),
+                    +new Date() <= ban.timestamp + ban.duration),
         );
 
         if (ban) {
@@ -492,7 +493,13 @@ export default class TcsPlayer {
                     TCS.lang.getAndReplace('moderation.ban.gotBanned', {
                         reason: ban.reason,
                         duration: ban.duration
-                            ? this.timeToDurations(this.msToTime(ban.duration))
+                            ? this.timeToDurations(
+                                  this.msToTime(
+                                      ban.timestamp +
+                                          ban.duration -
+                                          +new Date(),
+                                  ),
+                              )
                             : TCS.lang.get('moderation.ban.permanent'),
                     }),
                 );

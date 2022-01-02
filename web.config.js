@@ -2,6 +2,7 @@
 /* eslint-disable no-undef */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 module.exports = {
     entry: './src/web/src/index.tsx',
@@ -12,15 +13,11 @@ module.exports = {
     mode: process.env.NODE_ENV || 'development',
     resolve: {
         extensions: ['.tsx', '.ts', '.js', '.jsx'],
-        alias: {
-            components: path.resolve(__dirname, 'src/web/src/components'),
-            hooks: path.resolve(__dirname, 'src/web/src/hooks'),
-            others: path.resolve(__dirname, 'src/web/src/others'),
-            resources: path.resolve(__dirname, 'src/web/src/resources'),
-            translations: path.resolve(__dirname, 'src/web/src/translations'),
-            utils: path.resolve(__dirname, 'src/web/src/utils'),
-        },
-        cacheWithContext: false,
+        plugins: [
+            new TsconfigPathsPlugin({
+                configFile: path.resolve(__dirname, 'src/web/tsconfig.json'),
+            }),
+        ],
     },
     devServer: { contentBase: path.join(__dirname, 'src/web') },
     module: {

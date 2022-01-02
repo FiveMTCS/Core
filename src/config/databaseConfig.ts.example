@@ -1,4 +1,4 @@
-var DATABASE_CONFIG = {
+const DATABASE_CONFIG = {
 	nosql: true,
 	address: 'localhost',
 	port: 3307, // Mongo : 27707, MariaDb :3307
@@ -6,3 +6,5 @@ var DATABASE_CONFIG = {
 	password: '',
 	databaseName: 'tcs',
 };
+
+export default DATABASE_CONFIG;
