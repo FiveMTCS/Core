@@ -1,19 +1,19 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import * as Config from 'config/index';
-import { debug, error } from 'mixed/libraries/logs/fivemConsole';
-import { IDatabase } from 'types/database';
-import IQueryResult from 'types/queryResult.interface';
-import { ISqlColumn } from 'types/sqlColumn.enum';
+import * as Config from '@config/index';
+import { debug, error } from '@mixed/libraries/logs/fivemConsole';
+import { IDatabase } from '@tcsTypes/database';
+import IQueryResult from '@tcsTypes/queryResult.interface';
+import { ISqlColumn } from '@tcsTypes/sqlColumn.enum';
 import MakeRequest from '../MakeRequest';
 import MakeRequestSQL from './MakeRequestSql';
 import { getDatabase } from './Mysql';
 
 class MysqlDatabase implements IDatabase {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    //eslint-disable-next-line @typescript-eslint/no-explicit-any
     private client: any;
 
     constructor(onConnectionDone: () => void) {
-        // eslint-disable-next-line @typescript-eslint/no-var-requires
+        //eslint-disable-next-line @typescript-eslint/no-var-requires
         this.connect(onConnectionDone);
     }
 
@@ -45,7 +45,7 @@ class MysqlDatabase implements IDatabase {
     /**
      * Converts a record to a SQL equation
      *
-     * @param {Record<string, unknown>} record List of key / value to transform in sql equation
+     * @param {Record<string, unknown>} record List of key //value to transform in sql equation
      * @param {string} sep Separator between each equation
      * @returns {string} The record transformed in a SQL equation
      */

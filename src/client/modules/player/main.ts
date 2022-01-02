@@ -4,15 +4,16 @@
  * @since 0.1.0
  */
 
-import TcsEventListener from 'mixed/libraries/events/eventListenerClass';
-import { TcsEvent, TcsEventTarget } from 'mixed/types/events/events.enum';
-import TcsEventsList from 'mixed/types/events/eventsList.enum';
+import TcsEventListener from '@mixed/libraries/events/eventListenerClass';
+import { TcsEvent, TcsEventTarget } from '@mixed/types/events/events.enum';
+import TcsEventsList from '@mixed/types/events/eventsList.enum';
 import {
     ICharacterInformations,
     ICharacterSkin,
-} from 'mixed/types/player/character.interface';
-import TCS from '../../tcs';
+} from '@mixed/types/player/character.interface';
+import TCS from '@/tcs';
 import './manager';
+import * as Moderation from './moderation';
 
 let charactersList: {
     characterId: string;
@@ -25,7 +26,6 @@ export const getCharacters = () => {
 };
 
 export const init = async () => {
-    console.log('init');
     const loadedListener: TcsEventListener = new TcsEventListener(
         TcsEventsList.PLAYER_LOADED,
         ({
@@ -37,7 +37,6 @@ export const init = async () => {
                 skin: ICharacterSkin;
             }[];
         }) => {
-            console.log('launch ui');
             charactersList = characters;
             SetNuiFocus(true, true);
             SendNuiMessage(
@@ -56,7 +55,7 @@ export const init = async () => {
         data: {},
     };
 
+    Moderation.initEvents();
     await TCS.delay(5 * 1000);
     TCS.eventManager.sendEvent(loadedEvent);
-    console.log('sent');
 };

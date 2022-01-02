@@ -1,14 +1,21 @@
 {
     "compilerOptions": {
+        "target": "ES6",
+        "module": "es6",
+        "moduleResolution": "node",
         "baseUrl": ".",
         "types": [
             "../../node_modules/@types/node",
             "../../node_modules/@citizenfx/client"
         ],
         "paths": {
-            "libraries/*": ["./libraries/*"],
-            "config/*": ["../config/*"],
-            "mixed/*":["../mixed/*"]
+            "@/*": [
+                "./*"
+            ],
+            "@libraries/*": ["./libraries/*"],
+            "@modules/*": ["./modules/*"],
+            "@config/*": ["../config/*"],
+            "@mixed/*":["../mixed/*"]
         },
     },
     "include": ["./**/*.ts", "../mixed/**/*.ts", "../assets/**/*.ts"],

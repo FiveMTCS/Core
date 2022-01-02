@@ -4,10 +4,10 @@
  * @since 0.1.0
  */
 
-import { TcsEvent, TcsEventTarget } from 'mixed/types/events/events.enum';
-import TcsEventsList from 'mixed/types/events/eventsList.enum';
-import WeaponList from 'mixed/types/game/weaponsList.enum';
-import TCS from '../../../tcs';
+import { TcsEvent, TcsEventTarget } from '@mixed/types/events/events.enum';
+import TcsEventsList from '@mixed/types/events/eventsList.enum';
+import WeaponList from '@mixed/types/game/weaponsList.enum';
+import TCS from '@/tcs';
 
 const weaponThreadChecker = () => {
     const pWeapons = Array<string>();

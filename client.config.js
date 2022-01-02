@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable no-undef */
 const path = require('path');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 module.exports = {
     entry: './src/client/main.ts',
@@ -19,16 +20,14 @@ module.exports = {
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.js', '.jsx'],
-        alias: {
-            libraries: path.resolve(__dirname, 'src/client/libraries'),
-            config: path.resolve(__dirname, 'src/config'),
-            mixed: path.resolve(__dirname, 'src/mixed'),
-            modules: path.resolve(__dirname, 'src/client/modules'),
-        },
-        cacheWithContext: false,
+        plugins: [
+            new TsconfigPathsPlugin({
+                configFile: path.resolve(__dirname, 'src/client/tsconfig.json'),
+            }),
+        ],
     },
     output: {
         filename: 'main.js',
-        path: __dirname + 'dist/client/',
+        path: path.resolve(__dirname, 'dist/client/'),
     },
 };

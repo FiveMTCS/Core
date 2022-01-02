@@ -5,21 +5,25 @@
  * @since 0.1.0
  */
 
-import { TcsGroups } from 'config/groups';
-import { GroupsPermissionsConfig } from 'config/groups/groupsPermissions';
-import { TcsPermissions } from 'config/groups/permissions.enum';
-import { TcsClientEvent, TcsEventTarget } from 'mixed/types/events/events.enum';
-import TcsEventsList from 'mixed/types/events/eventsList.enum';
-import Licenses from 'mixed/types/game/licenses.interface';
-import IPunishmentsList from 'mixed/types/player/punishementsList.interface';
-import IPunishment from 'mixed/types/player/punishment.interace';
-import ISessionTime from 'mixed/types/player/sessionTime.interface';
-import TCS from '../../../../tcs';
+import { TcsGroups } from '@config/groups';
+import { GroupsPermissionsConfig } from '@config/groups/groupsPermissions';
+import { TcsPermissions } from '@config/groups/permissions.enum';
+import {
+    TcsClientEvent,
+    TcsEventTarget,
+} from '@mixed/types/events/events.enum';
+import TcsEventsList from '@mixed/types/events/eventsList.enum';
+import Licenses from '@mixed/types/game/licenses.interface';
+import IPunishmentsList from '@mixed/types/player/punishementsList.interface';
+import IPunishment from '@mixed/types/player/punishment.interace';
+import ISessionTime from '@mixed/types/player/sessionTime.interface';
+import TCS from '@/tcs';
 import TcsCharacter from '../classes/character';
 import {
     PLAYER_MODULE_CHARACTERS_TABLE,
     PLAYER_MODULE_PLAYERS_TABLE,
 } from '../constants';
+import IDeferrals from '@/types/deferrals';
 
 export default class TcsPlayer {
     private source: string;
@@ -31,11 +35,15 @@ export default class TcsPlayer {
 
     private characters: TcsCharacter[];
 
-    private group: TcsGroups;
+    private group: string;
 
     private ready: boolean;
 
-    constructor(source: string) {
+    constructor(source: string, deferrals?: IDeferrals) {
+        this.updateDeferrals(
+            deferrals,
+            TCS.lang.get('player.connecting.loading'),
+        );
         this.source = source;
 
         this.playerId = '-1';
@@ -62,16 +70,22 @@ export default class TcsPlayer {
         };
 
         TCS.debug(
-            TCS.lang.getAndReplace('player.debug.fecthingPlayer', {
+            TCS.lang.getAndReplace('player.debug.fetchingPlayer', {
                 playerName: GetPlayerName(this.source),
             }),
         );
-        this.retrievingInformations();
+        this.retrievingInformations(deferrals);
+    }
+
+    private updateDeferrals(deferrals: IDeferrals, message: string) {
+        if (deferrals) {
+            deferrals.update(message);
+        }
     }
 
     private async fetchPunishments() {
         TCS.debug(
-            TCS.lang.getAndReplace('player.debug.fecthingPlayerPunishments', {
+            TCS.lang.getAndReplace('player.debug.fetchingPlayerPunishments', {
                 id: this.playerId,
             }),
         );
@@ -98,7 +112,6 @@ export default class TcsPlayer {
     }
 
     private async fetchCharacters() {
-        // TCS.debug(`Fetching characters for player ${this.playerId}`);
         const characters = await TCS.databaseManager
             .database()
             .get([PLAYER_MODULE_CHARACTERS_TABLE], {
@@ -127,7 +140,7 @@ export default class TcsPlayer {
     /**
      * Retrieve player informations or create a new document if the player's informations don't exist
      */
-    async retrievingInformations() {
+    async retrievingInformations(deferrals?: IDeferrals) {
         const player = await TCS.databaseManager
             .database()
             .get([PLAYER_MODULE_PLAYERS_TABLE], {
@@ -156,26 +169,28 @@ export default class TcsPlayer {
         this.group = player.data?.group;
         this.wholeSession = player.data?.sessionTime;
 
-        this.setGroup(TcsGroups.ADMIN);
-
-        await this.fetchPunishments();
         await this.fetchCharacters();
 
-        const loadedEvent: TcsClientEvent = {
-            target: TcsEventTarget.CLIENT,
-            eventType: TcsEventsList.PLAYER_LOADED,
-            targetId: this.source,
-            data: {
-                characters: this.characters.map((character) =>
-                    character.export(),
-                ),
-            },
-        };
+        this.updateDeferrals(
+            deferrals,
+            TCS.lang.get('player.connecting.punishments'),
+        );
+        await this.fetchPunishments();
 
-        TCS.debug(`Player ${this.playerId} ready, sending loaded event`);
-        TCS.eventManager.sendEvent(loadedEvent);
+        const isBanned = this.checkBan(deferrals);
+
+        if (isBanned) {
+            return;
+        }
+
+        TCS.debug(
+            TCS.lang.getAndReplace('player.debug.playerReady', {
+                id: this.playerId,
+            }),
+        );
 
         this.ready = true;
+        deferrals?.done();
     }
 
     /**
@@ -220,40 +235,49 @@ export default class TcsPlayer {
      * @param {IPunishment} punishment New punishment to add to the player's history
      */
     async addPunishment(punishment: IPunishment) {
-        await TCS.databaseManager.database().insert('punishments', punishment);
-
         switch (punishment.type) {
             case 'ban':
                 this.punishments.bans.push(punishment);
+                // Sort by timestamp older to most recent
+                this.punishments.bans.sort((a, b) => a.timestamp - b.timestamp);
                 break;
             case 'kick':
                 this.punishments.kicks.push(punishment);
+                this.punishments.kicks.sort(
+                    (a, b) => a.timestamp - b.timestamp,
+                );
                 break;
 
             case 'warn':
                 this.punishments.warns.push(punishment);
+                this.punishments.warns.sort(
+                    (a, b) => a.timestamp - b.timestamp,
+                );
                 break;
 
             default:
-            // TCS.error(`Invalid punishment type "${punishment.type}"`);
+                TCS.error(`Invalid punishment type "${punishment.type}"`);
+                return;
         }
+
+        await TCS.databaseManager.database().insert('punishments', punishment);
     }
 
     /**
      * Get the current player's group
      *
-     * @returns {TcsGroups} Player's group
+     * @returns {string} Player's group
      */
-    getGroup() {
+    getGroup(): string {
         return this.group;
     }
 
     /**
      * Set the new player's group
      *
-     * @param {TcsGroups} newGroup New group of the player
+     * @param {string} newGroup New group of the player
      */
-    setGroup(newGroup: TcsGroups) {
+    setGroup(newGroup: string) {
         this.group = newGroup;
 
         TCS.databaseManager.database().update(
@@ -270,14 +294,23 @@ export default class TcsPlayer {
     /**
      * Check if the player has the specified permission
      *
-     * @param {TcsPermissions} permission Permission to check
+     * @param {string} permission Permission to check
      * @returns {boolean} True if the current player has the specified permission
      */
-    hasPermission(permission: TcsPermissions) {
+    hasPermission(permission: string) {
         return (
             GroupsPermissionsConfig[this.group].includes(TcsPermissions.ALL) ||
             GroupsPermissionsConfig[this.group].includes(permission)
         );
+    }
+
+    /**
+     * Get the current player's characters
+     *
+     * @returns {TcsCharacter[]} List of the player's characters
+     */
+    getCharacters(): TcsCharacter[] {
+        return this.characters;
     }
 
     /**
@@ -349,5 +382,124 @@ export default class TcsPlayer {
                 sessionTime: this.wholeSession,
             },
         );
+    }
+
+    /**
+     * Kick the player from the server
+     *
+     * @param sender
+     * @param reason Reason of the kick
+     */
+    kick(sender: string, reason: string) {
+        DropPlayer(
+            this.source,
+            TCS.lang.getAndReplace('moderation.kick.gotKicked', {
+                reason,
+            }),
+        );
+
+        const data: IPunishment = {
+            sender: sender,
+            playerId: this.playerId,
+            type: 'kick',
+            reason: reason,
+            timestamp: +new Date(),
+        };
+
+        this.addPunishment(data);
+    }
+
+    /**
+     * Convert a time into a readable string
+     *
+     * @param time Time to convert
+     * @returns Time converted into a readable string
+     */
+    private timeToDurations(time: ISessionTime): string {
+        return TCS.lang.getAndReplace('core.duration', {
+            weeks: time.weeks,
+            days: time.days,
+            hours: time.hours,
+            minutes: time.minutes,
+            seconds: time.seconds,
+        });
+    }
+
+    /**
+     * Ban the player from the server
+     *
+     * @param sender
+     * @param reason
+     * @param duration
+     */
+    ban(sender: string, reason: string, duration?: number) {
+        DropPlayer(
+            this.source,
+            TCS.lang.getAndReplace('moderation.ban.gotBanned', {
+                reason,
+                duration: duration
+                    ? this.timeToDurations(this.msToTime(duration))
+                    : TCS.lang.get('moderation.ban.permanent'),
+            }),
+        );
+
+        const data: IPunishment = {
+            sender: sender,
+            playerId: this.playerId,
+            type: 'ban',
+            reason: reason,
+            timestamp: +new Date(),
+            duration: duration,
+        };
+
+        this.addPunishment(data);
+    }
+
+    /**
+     * Warn the player
+     *
+     * @param sender
+     * @param reason
+     */
+    warn(sender: string, reason: string) {
+        const data: IPunishment = {
+            sender: sender,
+            playerId: this.playerId,
+            type: 'warn',
+            reason: reason,
+            timestamp: +new Date(),
+        };
+
+        this.addPunishment(data);
+    }
+
+    /**
+     * Check if the player is banned and kick him if he is
+     *
+     * @returns {boolean} Return true if the player is banned
+     */
+    checkBan(deferrals?: IDeferrals): boolean {
+        const ban = this.punishments.bans.find(
+            (ban) =>
+                this.playerId.toString() === ban.playerId.toString() &&
+                (ban.duration === null ||
+                    +new Date() > ban.timestamp + ban.duration),
+        );
+
+        if (ban) {
+            if (deferrals)
+                deferrals.done(
+                    TCS.lang.getAndReplace('moderation.ban.gotBanned', {
+                        reason: ban.reason,
+                        duration: ban.duration
+                            ? this.timeToDurations(this.msToTime(ban.duration))
+                            : TCS.lang.get('moderation.ban.permanent'),
+                    }),
+                );
+            else this.kick(ban.sender, ban.reason);
+            return true;
+        }
+
+        return false;
     }
 }

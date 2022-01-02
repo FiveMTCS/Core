@@ -1,4 +1,4 @@
-import DATABASE_CONFIG from 'config/databaseConfig';
+import DATABASE_CONFIG from '@config/databaseConfig';
 import { MongoClient } from 'mongodb';
 
 let db;

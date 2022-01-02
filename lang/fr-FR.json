@@ -1,13 +1,21 @@
 {
     "core.initializing": "Initialisation de TCS en cours...",
     "core.ready": "TCS est prêt à être utilisé !",
+    "core.duration": "{weeks} semaines, {days} jours, {hours} hours, {minutes} minutes, {seconds} secondes",
     "database.connecting": "Connexion à la base de données en cours...",
     "database.connected": "Connexion à la base de données établie !",
     "callbacks.error.notExist": "Le callback {name} n'existe pas !",
-    "player.dropped": "[Système] Le joueur {playerName} s'est déconnecté. Raison: \"{reason}\".",
-    "player.connecting": "[Système] Le joueur {playerName} se connecte au serveur.",
-    "player.debug.fecthingPlayer": "Récupération du joueur {playerName}...",
-    "player.debug.fecthingPlayerPunishments": "Récupération de l'historique des modérations du joueur {id}...",
+    "player.connecting.loading": "Vos informations sont en cours de chargement...",
+    "player.connecting.punishments": "Votre historique de sanctions est en cours de chargement...",
+    "player.debug.dropped": "[Système] Le joueur {playerName} s'est déconnecté. Raison: \"{reason}\".",
+    "player.debug.connecting": "[Système] Le joueur {playerName} se connecte au serveur.",
+    "player.debug.fetchingPlayer": "Récupération du joueur {playerName}...",
+    "player.debug.fetchingPlayerPunishments": "Récupération de l'historique des modérations du joueur {id}...",
+    "player.debug.playerReady": "[System] Le joueur {id} est prêt, connexion au serveur.",
     "player.debug.newInformations": "Enregistrement des nouvelles informations du joueur {id}.",
-    "player.debug.newSkin": "Enregistrement du nouveau skin du joueur {id}."
+    "player.debug.newSkin": "Enregistrement du nouveau skin du joueur {id}.",
+
+    "moderation.kick.gotKicked": "Vous avez été kick pour : \"{reason}\".\n\nSi vous pensez qu'il s'agit d'une erreur, veuillez contacter un administrateur.",
+    "moderation.ban.gotBanned": "Vous avez été banni pour : \"{reason}\".\nTemps restant : {duration}.\n\nSi vous pensez qu'il s'agit d'une erreur, veuillez contacter un administrateur.",
+    "moderation.ban.permanent": "Permanent"
 }

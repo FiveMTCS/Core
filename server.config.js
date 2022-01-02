@@ -2,6 +2,7 @@
 /* eslint-disable no-undef */
 const path = require('path');
 const fs = require('fs');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 const nodeModules = {};
 fs.readdirSync(path.resolve(__dirname, 'node_modules'))
@@ -29,18 +30,15 @@ module.exports = {
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.js', '.jsx'],
-        alias: {
-            types: path.resolve(__dirname, 'src/server/types'),
-            libraries: path.resolve(__dirname, 'src/server/libraries'),
-            config: path.resolve(__dirname, 'src/config'),
-            mixed: path.resolve(__dirname, 'src/mixed'),
-            TcsModules: path.resolve(__dirname, 'src/server/modules'),
-        },
-        cacheWithContext: false,
+        plugins: [
+            new TsconfigPathsPlugin({
+                configFile: path.resolve(__dirname, 'src/server/tsconfig.json'),
+            }),
+        ],
     },
     output: {
         filename: 'main.js',
-        path: __dirname + 'dist/server/',
+        path: path.resolve(__dirname, 'dist/server/'),
     },
     externals: nodeModules,
 };

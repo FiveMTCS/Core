@@ -10,6 +10,7 @@ interface IPunishment {
     timestamp: number;
     sender: string;
     reason: string;
+    duration?: number;
     note?: string;
 }
 

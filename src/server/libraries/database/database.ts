@@ -1,6 +1,6 @@
-import DATABASE_CONFIG from 'config/databaseConfig';
-import LanguageManager from 'mixed/libraries/language/languageManager';
-import { debug } from 'mixed/libraries/logs/fivemConsole';
+import DATABASE_CONFIG from '@config/databaseConfig';
+import LanguageManager from '@mixed/libraries/language/languageManager';
+import { debug } from '@mixed/libraries/logs/fivemConsole';
 import { IDatabase } from '../../types/database';
 import MongoDatabase from './mongo/MongoDatabase';
 import MysqlDatabase from './sql/MysqlDatabase';
@@ -25,7 +25,7 @@ export default class TcsDatabaseManager {
         }
     }
 
-    loadReadyList = () => {
+    private loadReadyList = () => {
         debug(LanguageManager.get('database.connected'));
         this.connected = true;
         this.onDatabaseReadyList.forEach((fnc) => fnc());

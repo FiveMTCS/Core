@@ -8,7 +8,7 @@ import {
     ICharacterInformations,
     ICharacterSkin,
     IExportedCharacter,
-} from 'mixed/types/player/character.interface';
+} from '@mixed/types/player/character.interface';
 
 export class TcsCharacterClient {
     private characterId: string;

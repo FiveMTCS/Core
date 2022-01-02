@@ -1,13 +1,21 @@
 {
     "core.initializing": "Initializing TCS...",
     "core.ready": "TCS is ready to go!",
+    "core.duration": "{weeks} weeks, {days} days, {hours} hours, {minutes} minutes, {seconds} seconds",
     "database.connecting": "Connecting to the database...",
     "database.connected": "Connected successfully to the database!",
     "callbacks.error.notExist": "Callback {name} does not exist!",
-    "player.dropped": "[System] Player {playerName} dropped. Reason: \"{reason}\".",
-    "player.connecting": "[System] Player {playerName} is connecting to the server.",
-    "player.debug.fecthingPlayer": "Fetching player {playerName}...",
-    "player.debug.fecthingPlayerPunishments": "Fetching player {id} punishments...",
+    "player.connecting.loading": "Your informations are loading...",
+    "player.connecting.punishments": "Your sanction history is loading...",
+    "player.debug.dropped": "[System] Player {playerName} dropped. Reason: \"{reason}\".",
+    "player.debug.connecting": "[System] Player {playerName} is connecting to the server.",
+    "player.debug.fetchingPlayer": "Fetching player {playerName}...",
+    "player.debug.fetchingPlayerPunishments": "Fetching player {id} punishments...",
+    "player.debug.playerReady": "[System] Player {id} is ready, connecting to the server.",
     "player.debug.newInformations": "Registering new informations for character {id}.",
-    "player.debug.newSkin": "Registering new skin for character {id}."
+    "player.debug.newSkin": "Registering new skin for character {id}.",
+
+    "moderation.kick.gotKicked": "You've been kicked for : \"{reason}\".\n\nIf you think this is a mistake, please contact an administrator.",
+    "moderation.ban.gotBanned": "You've been banned for : \"{reason}\".\nRemaining time : {duration}.\n\nIf you think this is a mistake, please contact an administrator.",
+    "moderation.ban.permanent": "Permanent"
 }

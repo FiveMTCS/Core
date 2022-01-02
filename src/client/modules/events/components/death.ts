@@ -4,10 +4,10 @@
  * @since 0.1.0
  */
 
-import { getPlayerByEntityID } from 'libraries/game/functions';
-import { TcsEvent, TcsEventTarget } from 'mixed/types/events/events.enum';
-import TcsEventsList from 'mixed/types/events/eventsList.enum';
-import TCS from '../../../tcs';
+import { getPlayerByEntityID } from '@libraries/game/functions';
+import { TcsEvent, TcsEventTarget } from '@mixed/types/events/events.enum';
+import TcsEventsList from '@mixed/types/events/eventsList.enum';
+import TCS from '@/tcs';
 
 const deathThreadChecker = () => {
     let wasDead = false;

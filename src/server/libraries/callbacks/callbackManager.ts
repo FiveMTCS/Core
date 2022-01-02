@@ -5,7 +5,6 @@
  * @since 0.1.0
  */
 
-import ConsoleColors from '../../../mixed/types/consoleColors';
 import {
     TcsClientEvent,
     TcsEventTarget,
@@ -17,7 +16,7 @@ import { error } from '../../../mixed/libraries/logs/fivemConsole';
 import LanguageManager from '../../../mixed/libraries/language/languageManager';
 
 class TcsCallbackManager {
-    private ServerCallBack: any[];
+    private callbacks: any[];
     private eventManager: TcsEventManager;
     private eventListenerServer: TcsEventListener;
 
@@ -27,15 +26,12 @@ class TcsCallbackManager {
      * @param {TcsEventManager} eventManager Current event manager.
      */
     constructor(eventManager: TcsEventManager) {
-        this.ServerCallBack = [];
+        this.callbacks = [];
         this.eventManager = eventManager;
 
-        /**
-         * Server side event
-         */
         this.eventListenerServer = new TcsEventListener(
             TcsEventsList.LISTENER_CALLBACK_SERVER,
-            (
+            async (
                 {
                     eventName,
                     requestId,
@@ -47,23 +43,10 @@ class TcsCallbackManager {
                 },
                 source?: string,
             ) => {
-                if (this.ServerCallBack[eventName] != null) {
-                    const result = this.ServerCallBack[eventName](source, args);
-                    const triggerEvent: TcsClientEvent = {
-                        eventType: TcsEventsList.LISTENER_CALLBACK_CLIENT,
-                        target: TcsEventTarget.CLIENT,
-                        targetId: source,
-                        data: {
-                            requestId: requestId,
-                            args: result,
-                        },
-                    };
-                    this.eventManager.sendEvent(triggerEvent);
+                let result = {};
+                if (this.callbacks[eventName] != null) {
+                    result = await this.callbacks[eventName](source, args);
                 } else {
-                    console.log(
-                        `${ConsoleColors.RED}[ERROR] [CALLBACKS]: ${eventName} DOES NOT EXIST`,
-                        ConsoleColors.RESET,
-                    );
                     error(
                         LanguageManager.getAndReplace(
                             'callbacks.error.notExist',
@@ -72,20 +55,33 @@ class TcsCallbackManager {
                             },
                         ),
                     );
+
+                    result = { callbackError: true };
                 }
+
+                const triggerEvent: TcsClientEvent = {
+                    eventType: TcsEventsList.LISTENER_CALLBACK_CLIENT,
+                    target: TcsEventTarget.CLIENT,
+                    targetId: source,
+                    data: {
+                        requestId: requestId,
+                        args: result,
+                    },
+                };
+                this.eventManager.sendEvent(triggerEvent);
             },
         );
         this.eventManager.addEventHandler(this.eventListenerServer);
     }
 
     /**
-     * Server side function
+     * Create a server callback
      *
      * @param {string} eventName The name of the event to call on the client side
      * @param {any} cb return function
      */
-    RegisterServerCallback = (eventName: string, cb: any) => {
-        this.ServerCallBack[eventName] = cb;
+    registerServerCallback = (eventName: string, cb: any) => {
+        this.callbacks[eventName] = cb;
     };
 }
 

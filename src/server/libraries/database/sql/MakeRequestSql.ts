@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import MakeRequest from '../MakeRequest';
-import IQueryResult from 'types/queryResult.interface';
+import IQueryResult from '@tcsTypes/queryResult.interface';
 
 export default class MakeRequestSQL extends MakeRequest {
     private con: any;
@@ -29,7 +29,7 @@ export default class MakeRequestSQL extends MakeRequest {
     /**
      * Converts a record to a SQL equation
      *
-     * @param {Record<string, any>} record List of key / value to transform in sql equation
+     * @param {Record<string, any>} record List of key //value to transform in sql equation
      * @param {string} sep Separator between each equation
      * @returns {string} The record transformed in a SQL equation
      */

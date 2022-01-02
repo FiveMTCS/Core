@@ -1,5 +1,5 @@
-import * as Config from 'config/index';
-import { IExportedCharacter } from 'mixed/types/player/character.interface';
+import * as Config from '@config/index';
+import { IExportedCharacter } from '@mixed/types/player/character.interface';
 import { getCharacters } from '../main';
 import { TcsCharacterClient } from '../components/classes/character';
 import {
@@ -11,9 +11,9 @@ import {
 } from './functions';
 import { applySkin, getPedMushot } from '../components/skinManager';
 import { getCamera, setCurrentPage } from './manager';
-import { TcsEvent, TcsEventTarget } from 'mixed/types/events/events.enum';
-import TcsEventsList from 'mixed/types/events/eventsList.enum';
-import TCS from '../../../tcs';
+import { TcsEvent, TcsEventTarget } from '@mixed/types/events/events.enum';
+import TcsEventsList from '@mixed/types/events/eventsList.enum';
+import TCS from '@/tcs';
 
 RegisterNuiCallbackType('characters:getList');
 RegisterNuiCallbackType('characters:set');

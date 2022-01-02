@@ -5,7 +5,7 @@
  */
 
 import { error, warning } from '../logs/fivemConsole';
-import * as Config from 'config/index';
+import * as Config from '@config/index';
 
 export class TcsLanguageManager {
     private language: string;

@@ -1,18 +1,20 @@
 export enum TcsPermissions {
-    ALL,
+    ALL = 'all',
 
-    BAN,
-    TEMP_BAN,
-    KICK,
-    NO_CLIP,
-    CHANGE_SKIN,
-    GO_TO,
-    TELEPORT,
-    WARN,
+    TEMP_BAN = 'tempBan',
+    BAN = 'ban',
+    KICK = 'kick',
+    NO_CLIP = 'noClip',
+    CHANGE_SKIN = 'changeSkin',
+    TELEPORT_TO_PLAYER = 'teleportToPlayer',
+    TELEPORT_TO_COORDS = 'teleport',
+    WARN = 'warn',
 
-    SET_GROUP,
+    KILL = 'kill',
 
-    START_MODULE,
-    STOP_MODULE,
-    RESTART_MODULE,
+    SET_GROUP = 'setGroup',
+    GET_GROUP = 'getGroup',
+
+    GET_SESSION_TIME = 'sessionTime',
+    GET_ALL_SESSION_TIME = 'allSessionTime',
 }

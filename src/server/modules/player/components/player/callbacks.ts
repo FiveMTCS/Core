@@ -1,23 +1,31 @@
-import { TcsGroups } from 'config/groups';
-import { TcsPermissions } from 'config/groups/permissions.enum';
-import TCS from '../../../../tcs';
+import { TcsPermissions } from '@config/groups/permissions.enum';
+import TCS from '@/tcs';
 import { getPlayer } from '../functions';
 import TcsPlayer from './player';
 
 export const initCallbacks = () => {
-    TCS.callbacks.RegisterServerCallback('player:getId', (source: string) => {
-        const player: TcsPlayer = getPlayer(source);
-        if (!player) {
-            return null;
-        }
+    TCS.callbacks.registerServerCallback(
+        'player:getId',
+        (source: string, { targetSource = source }) => {
+            const player: TcsPlayer = getPlayer(targetSource);
+            if (!player) {
+                return null;
+            }
 
-        return player.getId();
-    });
+            return player.getId();
+        },
+    );
 
-    TCS.callbacks.RegisterServerCallback(
+    TCS.callbacks.registerServerCallback(
         'player:getGroup',
-        (source: string) => {
-            const player: TcsPlayer = getPlayer(source);
+        (source: string, { targetSource = source }) => {
+            if (targetSource !== source) {
+                const sender = getPlayer(source);
+                if (!sender || sender.hasPermission(TcsPermissions.GET_GROUP)) {
+                    return null;
+                }
+            }
+            const player: TcsPlayer = getPlayer(targetSource);
             if (!player) {
                 return null;
             }
@@ -26,10 +34,20 @@ export const initCallbacks = () => {
         },
     );
 
-    TCS.callbacks.RegisterServerCallback(
+    TCS.callbacks.registerServerCallback(
         'player:getSessionTime',
-        (source: string) => {
-            const player: TcsPlayer = getPlayer(source);
+        (source: string, { targetSource = source }) => {
+            if (targetSource !== source) {
+                const sender = getPlayer(source);
+                if (
+                    !sender ||
+                    sender.hasPermission(TcsPermissions.GET_SESSION_TIME)
+                ) {
+                    return null;
+                }
+            }
+
+            const player: TcsPlayer = getPlayer(targetSource);
             if (!player) {
                 return null;
             }
@@ -38,45 +56,25 @@ export const initCallbacks = () => {
         },
     );
 
-    TCS.callbacks.RegisterServerCallback(
+    TCS.callbacks.registerServerCallback(
         'player:getAllSessionTime',
-        (source: string) => {
-            const player: TcsPlayer = getPlayer(source);
+        (source: string, { targetSource = source }) => {
+            if (targetSource !== source) {
+                const sender = getPlayer(source);
+                if (
+                    !sender ||
+                    sender.hasPermission(TcsPermissions.GET_ALL_SESSION_TIME)
+                ) {
+                    return null;
+                }
+            }
+
+            const player: TcsPlayer = getPlayer(targetSource);
             if (!player) {
                 return null;
             }
 
             return player.getAllSessionsTime();
-        },
-    );
-
-    TCS.callbacks.RegisterServerCallback(
-        'player:setGroup',
-        (source: string, args: any) => {
-            const player: TcsPlayer = getPlayer(source);
-
-            if (!player || !player.hasPermission(TcsPermissions.SET_GROUP)) {
-                return false;
-            }
-
-            const group: TcsGroups = args.group;
-            if (!group) {
-                return false;
-            }
-
-            const otherPlayerSource = args.target;
-            if (!otherPlayerSource) {
-                return false;
-            }
-
-            const otherPlayer = getPlayer(otherPlayerSource);
-            if (!otherPlayer) {
-                return false;
-            }
-
-            player.setGroup(group);
-
-            return true;
         },
     );
 };

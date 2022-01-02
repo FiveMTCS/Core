@@ -4,10 +4,10 @@
  * @since 0.1.0
  */
 
-import ConsoleColors from 'mixed/types/consoleColors';
-import { error, confirm } from 'mixed/libraries/logs/fivemConsole';
-import TCS from './tcs';
-import * as Player from 'TcsModules/player/main';
+import ConsoleColors from '@mixed/types/consoleColors';
+import { error, confirm } from '@mixed/libraries/logs/fivemConsole';
+import TCS from '@/tcs';
+import * as Player from '@modules/player/main';
 
 globalThis.exports('Core', () => TCS);
 

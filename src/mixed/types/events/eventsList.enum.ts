@@ -22,6 +22,8 @@ enum TcsEventsList {
     CHARACTER_GET_SKIN = 'character_get_skin',
     CHARACTER_GET_INFOS = 'character_get_infos',
     CHARACTER_GET_ID = 'character_get_id',
+
+    MODERATION_KILL_PLAYER = 'moderation_kill_player',
 }
 
 export default TcsEventsList;

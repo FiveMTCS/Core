@@ -5,8 +5,8 @@
  * @since 0.1.0
  */
 
-import * as Player from './modules/player/main';
-import * as Events from './modules/events/main';
+import * as Player from '@modules/player/main';
+import * as Events from '@modules/events/main';
 import TCS from './tcs';
 
 globalThis.exports('getCore', () => TCS);

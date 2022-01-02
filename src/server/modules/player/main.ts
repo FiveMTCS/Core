@@ -4,22 +4,26 @@
  * @since 0.1.0
  */
 
-import TcsEventListener from 'mixed/libraries/events/eventListenerClass';
-import TcsEventsList from 'mixed/types/events/eventsList.enum';
-import { sqlTypes } from 'types/sqlColumn.enum';
-import TCS from '../../tcs';
+import TcsEventListener from '@mixed/libraries/events/eventListenerClass';
+import TcsEventsList from '@mixed/types/events/eventsList.enum';
+import { sqlTypes } from '@tcsTypes/sqlColumn.enum';
+import TCS from '@/tcs';
 import {
     PLAYER_MODULE_PLAYERS_TABLE,
     PLAYER_MODULE_PUNISHMENTS_TABLE,
 } from './components/constants';
-import { loadPlayer } from './components/functions';
+import { getPlayer, loadPlayer } from './components/functions';
 
 import { initCallbacks } from './components';
+import TCS_CONFIG from '@config/config';
+import {
+    TcsClientEvent,
+    TcsEventTarget,
+} from '@mixed/types/events/events.enum';
 
 export const init = () => {
     initCallbacks();
 
-    console.log('1');
     TCS.databaseManager.onDatabaseReady(async () => {
         await TCS.databaseManager
             .database()
@@ -49,7 +53,6 @@ export const init = () => {
                     type: sqlTypes.BIGINT,
                 },
             ]);
-        console.log('2');
         await TCS.databaseManager
             .database()
             .ensureColumns(PLAYER_MODULE_PUNISHMENTS_TABLE, [
@@ -79,12 +82,36 @@ export const init = () => {
                 },
             ]);
 
-        console.log('3');
         const eventHandler = new TcsEventListener(
             TcsEventsList.PLAYER_READY,
             (data: Object, source?: string) => {
-                console.log('loading');
-                if (source) loadPlayer(source);
+                if (!source) return;
+                let player = getPlayer(source);
+
+                if (!player) {
+                    // If the server is in debug mode and the resource restarted, we load the player
+                    if (TCS_CONFIG.debugMode) {
+                        loadPlayer(source);
+                        player = getPlayer(source);
+
+                        while (!player.isReady()) {
+                            TCS.delay(100);
+                        }
+                    } else return;
+                }
+
+                const loadedEvent: TcsClientEvent = {
+                    target: TcsEventTarget.CLIENT,
+                    eventType: TcsEventsList.PLAYER_LOADED,
+                    targetId: source,
+                    data: {
+                        characters: player
+                            .getCharacters()
+                            .map((character) => character.export()),
+                    },
+                };
+
+                TCS.eventManager.sendEvent(loadedEvent);
             },
         );
 

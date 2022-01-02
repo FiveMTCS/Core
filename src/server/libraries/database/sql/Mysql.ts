@@ -1,6 +1,6 @@
 import * as mysql from 'mysql2';
-import DATABASE_CONFIG from 'config/databaseConfig';
-import { error } from 'mixed/libraries/logs/fivemConsole';
+import DATABASE_CONFIG from '@config/databaseConfig';
+import { error } from '@mixed/libraries/logs/fivemConsole';
 
 const connectionParameters = {
     host: DATABASE_CONFIG.address,

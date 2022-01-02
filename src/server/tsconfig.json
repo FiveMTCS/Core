@@ -1,14 +1,23 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "types": ["../../node_modules/@types/node", "../../node_modules/@citizenfx/server"],
+    "baseUrl": "../../",
     "paths": {
-      "types/*": ["./types/*"],
-      "libraries/*": ["./libraries/*"],
-      "TcsModules/*": ["./modules/*"],
-      "mixed/*": ["../mixed/*"],
-      "config/*": ["../config/*"],
-    }
+      "@/*": [
+        "./src/server/*"
+      ],
+      "@tcsTypes/*": ["./src/server/types/*"],
+      "@libraries/*": ["./src/server/libraries/*"],
+      "@modules/*": ["./src/server/modules/*"],
+      "@mixed/*": ["./src/mixed/*"],
+      "@config/*": ["./src/config/*"],
+    },
+    "noImplicitAny": false,
+    "module": "es6",
+    "target": "es6",
+    "allowJs": true,
+    "lib": ["es2017"],
+    "types": ["@types/node", "@citizenfx/server"],
+    "moduleResolution": "node"
   },
   "include": ["./**/*.ts", "../mixed/**/*.ts", "../assets/**/*.ts"],
   "exclude": ["../assets/cli_*.ts", "../client/**/*.ts", "../web/**/*.ts"],

@@ -1,5 +1,5 @@
 export enum sqlTypes {
-    // string data types
+    ///string data types
     CHAR = 'CHAR(255)',
     VARCHAR = 'VARCHAR(255)',
     TINYTEXT = 'TINYTEXT(255)',

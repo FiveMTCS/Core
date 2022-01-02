@@ -1,4 +1,4 @@
-import TCS from '../../../tcs';
+import TCS from '@/tcs';
 import { TcsCharacterClient } from './classes/character';
 
 let lastHash = 0;

@@ -4,10 +4,30 @@
  * @since 0.1.0
  */
 
-import TcsPlayer from './player/player';
+import TCS from '@/tcs';
+import IDeferrals from '@/types/deferrals';
+import { loadPlayer, switchPlayerSource } from './functions';
 
 (() => {
-    onNet('playerJoining', (source: string) => {
-        new TcsPlayer(source);
+    onNet(
+        'playerConnecting',
+        (
+            playerName: string,
+            setKickReason: (reason: string) => void,
+            deferrals: IDeferrals,
+        ) => {
+            deferrals.defer();
+            TCS.debug(
+                TCS.lang.getAndReplace('player.debug.connecting', {
+                    playerName,
+                }),
+            );
+            loadPlayer((global as any).source, deferrals);
+        },
+    );
+
+    onNet('playerJoining', (oldID: string) => {
+        const source = (global as any).source;
+        switchPlayerSource(source, oldID);
     });
 })();

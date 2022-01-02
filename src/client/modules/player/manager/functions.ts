@@ -1,5 +1,5 @@
-import * as Config from 'config/index';
-import TCS from '../../../tcs';
+import * as Config from '@config/index';
+import TCS from '@/tcs';
 import {
     ANIMATION,
     DICTIONARY,

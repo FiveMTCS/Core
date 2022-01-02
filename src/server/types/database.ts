@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import MakeRequest from 'libraries/database/MakeRequest';
+import MakeRequest from '@libraries/database/MakeRequest';
 import IQueryResult from './queryResult.interface';
 import { ISqlColumn } from './sqlColumn.enum';
 
@@ -21,11 +21,11 @@ export interface IDatabase {
     get(tables: string[], query: Record<string, any>): MakeRequest;
 
     /**
-     * Update rows / documents from the database
+     * Update rows //documents from the database
      *
      * @param {string} table Table to update the value from
-     * @param {Record<string, any>} query Current query to select the rows / documents to update
-     * @param {Record<string, any>} newValues New values to set from the selected rows / documents
+     * @param {Record<string, any>} query Current query to select the rows //documents to update
+     * @param {Record<string, any>} newValues New values to set from the selected rows //documents
      */
     update(
         table: string,
@@ -42,10 +42,10 @@ export interface IDatabase {
     insert(table: string, object: Record<string, any>): Promise<IQueryResult>;
 
     /**
-     * Delete rows / documents from the database
+     * Delete rows //documents from the database
      *
      * @param {string} table Table to delete the values from
-     * @param {Record<string, any>} query Current query to select the rows / documents to delete
+     * @param {Record<string, any>} query Current query to select the rows //documents to delete
      */
     delete(table: string, query: Record<string, any>): Promise<any>;
 }

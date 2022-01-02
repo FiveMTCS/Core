@@ -7,7 +7,7 @@ import { getDatabase } from './Mongo';
 
 class MongoDatabase implements IDatabase {
     constructor(onConnectionDone: () => void) {
-        // eslint-disable-next-line @typescript-eslint/no-var-requires
+        ///eslint-disable-next-line @typescript-eslint/no-var-requires
 
         this.connect(onConnectionDone);
     }

@@ -5,7 +5,7 @@
  */
 
 import TcsBenchmark from '../benchmark/benchmark';
-import * as Config from 'config/index';
+import * as Config from '@config/index';
 import { error, warning } from '../logs/fivemConsole';
 import IThreadExec from '../../types/threads/threadInterface';
 import ConsoleColors from '../../types/consoleColors';

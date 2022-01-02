@@ -8,8 +8,8 @@ import {
     ICharacterInformations,
     ICharacterSkin,
     IExportedCharacter,
-} from 'mixed/types/player/character.interface';
-import TCS from '../../../../tcs';
+} from '@mixed/types/player/character.interface';
+import TCS from '@/tcs';
 import { PLAYER_MODULE_CHARACTERS_TABLE } from '../constants';
 import TcsPlayer from '../player/player';
 

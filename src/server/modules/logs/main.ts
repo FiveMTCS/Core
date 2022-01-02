@@ -1,5 +1,5 @@
-import { sqlTypes } from 'types/sqlColumn.enum';
-import TCS from '../../tcs';
+import { sqlTypes } from '@tcsTypes/sqlColumn.enum';
+import TCS from '@/tcs';
 
 (function () {
     TCS.databaseManager.onDatabaseReady(async () => {
@@ -18,7 +18,7 @@ import TCS from '../../tcs';
     on('playerDropped', (reason: string) => {
         const _source = source;
         TCS.logs.send(
-            TCS.lang.getAndReplace('player.dropped', {
+            TCS.lang.getAndReplace('player.debug.dropped', {
                 playerName: GetPlayerName(_source),
                 reason: reason,
             }),

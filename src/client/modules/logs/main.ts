@@ -4,7 +4,7 @@
  * @since 0.1.0
  */
 
-import TCS from '../../tcs';
+import TCS from '@/tcs';
 
 (function () {
     onNet('chat:addMessage', (message: string) => {

@@ -4,9 +4,9 @@
  * @since 0.1.0
  */
 
-import TcsCallbackManager from 'libraries/callbacks/callbackManager';
-import TcsDatabaseManager from 'libraries/database/database';
-import TcsMixedCore from 'mixed/tcs';
+import TcsCallbackManager from '@libraries/callbacks/callbackManager';
+import TcsDatabaseManager from '@libraries/database/database';
+import TcsMixedCore from '@mixed/tcs';
 
 export class TcsCore extends TcsMixedCore {
     readonly callbacks: TcsCallbackManager;

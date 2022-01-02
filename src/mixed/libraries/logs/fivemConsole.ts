@@ -1,4 +1,4 @@
-import * as Config from 'config/index';
+import * as Config from '@config/index';
 import ConsoleColors from '../../types/consoleColors';
 
 /**

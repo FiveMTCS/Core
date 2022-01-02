@@ -5,12 +5,14 @@ import LanguageManager, {
 import { debug, error, warning } from './libraries/logs/fivemConsole';
 import TcsLogsManager from './libraries/logs/logsManager';
 import TcsThreadsManager from './libraries/threads/threadsManager';
+import { TimeUnits } from './libraries/time/time';
 
 class TcsMixedCore {
     readonly lang: TcsLanguageManager;
     readonly eventManager: TcsEventManager;
     readonly threads: TcsThreadsManager;
     readonly logs: TcsLogsManager;
+    readonly TimeUnits;
     readonly isServerSided: boolean;
 
     constructor(isServerSided: boolean) {
@@ -20,6 +22,7 @@ class TcsMixedCore {
         this.eventManager = new TcsEventManager(isServerSided);
         this.threads = new TcsThreadsManager();
         this.logs = new TcsLogsManager(this.eventManager, isServerSided);
+        this.TimeUnits = TimeUnits;
         this.isServerSided = isServerSided;
     }
 

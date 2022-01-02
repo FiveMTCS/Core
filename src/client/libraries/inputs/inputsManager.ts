@@ -4,11 +4,11 @@
  * @since 0.1.0
  */
 
-import { error } from 'mixed/libraries/logs/fivemConsole';
+import { error } from '@mixed/libraries/logs/fivemConsole';
 import {
     TcsControllerInputs,
     TcsKeyboardInputs,
-} from 'mixed/types/game/inputsList.enum';
+} from '@mixed/types/game/inputsList.enum';
 import { ActionInput } from './inputs';
 
 class TcsInputManager {

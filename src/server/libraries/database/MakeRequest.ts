@@ -1,4 +1,4 @@
-import IQueryResult from 'types/queryResult.interface';
+import IQueryResult from '@tcsTypes/queryResult.interface';
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export default abstract class MakeRequest {
